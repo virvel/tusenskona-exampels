@@ -1,0 +1,12 @@
+[submodule "cpp/libDaisy"]
+	path = libDaisy
+	url = https://github.com/electro-smith/libDaisy
+[submodule "cpp/DaisySP"]
+	path = DaisySP
+	url = https://github.com/electro-smith/DaisySP
+[submodule "tusenskona"]
+	path = tusenskona
+	url = https://github.com/virvel/tusenskona
+[submodule "cpp/virveldsp"]
+	path = cpp/virveldsp
+	url = https://github.com/virvel/virveldsp

@@ -1,0 +1,1944 @@
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"granulator.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN3dsp5Grain4initEPfm,"ax",%progbits
+  19              		.align	1
+  20              		.p2align 2,,3
+  21              		.global	_ZN3dsp5Grain4initEPfm
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	_ZN3dsp5Grain4initEPfm:
+  27              	.LVL0:
+  28              	.LFB4739:
+  29              		.file 1 "../virveldsp/src/granulator.cpp"
+   1:../virveldsp/src/granulator.cpp **** #include "granulator.h"
+   2:../virveldsp/src/granulator.cpp **** 
+   3:../virveldsp/src/granulator.cpp **** void dsp::Grain::init(float * const  buffer, const uint32_t size) {
+  30              		.loc 1 3 67 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+   4:../virveldsp/src/granulator.cpp ****     m_buf = buffer;
+  35              		.loc 1 4 5 view .LVU1
+   5:../virveldsp/src/granulator.cpp ****     m_active = false;
+  36              		.loc 1 5 14 is_stmt 0 view .LVU2
+  37 0000 0023     		movs	r3, #0
+   6:../virveldsp/src/granulator.cpp ****     m_position = 0;
+   7:../virveldsp/src/granulator.cpp ****     m_size = size;
+   8:../virveldsp/src/granulator.cpp ****     m_rate = 1.f;
+  38              		.loc 1 8 12 view .LVU3
+  39 0002 4FF07E5C 		mov	ip, #1065353216
+   4:../virveldsp/src/granulator.cpp ****     m_active = false;
+  40              		.loc 1 4 11 view .LVU4
+  41 0006 4160     		str	r1, [r0, #4]
+   5:../virveldsp/src/granulator.cpp ****     m_active = false;
+  42              		.loc 1 5 5 is_stmt 1 view .LVU5
+   6:../virveldsp/src/granulator.cpp ****     m_position = 0;
+  43              		.loc 1 6 5 view .LVU6
+  44              		.loc 1 8 12 is_stmt 0 view .LVU7
+  45 0008 C0F80CC0 		str	ip, [r0, #12]	@ float
+   5:../virveldsp/src/granulator.cpp ****     m_active = false;
+  46              		.loc 1 5 14 view .LVU8
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 2
+
+
+  47 000c 0370     		strb	r3, [r0]
+   9:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+  48              		.loc 1 9 16 view .LVU9
+  49 000e C0E90622 		strd	r2, r2, [r0, #24]
+   6:../virveldsp/src/granulator.cpp ****     m_position = 0;
+  50              		.loc 1 6 16 view .LVU10
+  51 0012 0022     		movs	r2, #0
+  52              	.LVL1:
+  10:../virveldsp/src/granulator.cpp ****     m_offset = 0;
+  11:../virveldsp/src/granulator.cpp ****     m_next_offset = 0;
+  53              		.loc 1 11 19 view .LVU11
+  54 0014 C0E90433 		strd	r3, r3, [r0, #16]
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+  55              		.loc 1 6 16 view .LVU12
+  56 0018 8260     		str	r2, [r0, #8]	@ float
+   7:../virveldsp/src/granulator.cpp ****     m_rate = 1.f;
+  57              		.loc 1 7 5 is_stmt 1 view .LVU13
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+  58              		.loc 1 8 5 view .LVU14
+   9:../virveldsp/src/granulator.cpp ****     m_offset = 0;
+  59              		.loc 1 9 5 view .LVU15
+  10:../virveldsp/src/granulator.cpp ****     m_next_offset = 0;
+  60              		.loc 1 10 5 view .LVU16
+  61              		.loc 1 11 5 view .LVU17
+  12:../virveldsp/src/granulator.cpp **** }
+  62              		.loc 1 12 1 is_stmt 0 view .LVU18
+  63 001a 7047     		bx	lr
+  64              		.cfi_endproc
+  65              	.LFE4739:
+  67              		.section	.text._ZN3dsp5Grain4playEv,"ax",%progbits
+  68              		.align	1
+  69              		.p2align 2,,3
+  70              		.global	_ZN3dsp5Grain4playEv
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  75              	_ZN3dsp5Grain4playEv:
+  76              	.LVL2:
+  77              	.LFB4740:
+  13:../virveldsp/src/granulator.cpp **** 
+  14:../virveldsp/src/granulator.cpp **** float dsp::Grain::play() {
+  78              		.loc 1 14 26 is_stmt 1 view -0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  15:../virveldsp/src/granulator.cpp ****     
+  16:../virveldsp/src/granulator.cpp ****     if (m_position >= m_duration) {
+  82              		.loc 1 16 5 view .LVU20
+  14:../virveldsp/src/granulator.cpp ****     
+  83              		.loc 1 14 26 is_stmt 0 view .LVU21
+  84 0000 38B5     		push	{r3, r4, r5, lr}
+  85              		.cfi_def_cfa_offset 16
+  86              		.cfi_offset 3, -16
+  87              		.cfi_offset 4, -12
+  88              		.cfi_offset 5, -8
+  89              		.cfi_offset 14, -4
+  90              		.loc 1 16 23 view .LVU22
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 3
+
+
+  91 0002 8569     		ldr	r5, [r0, #24]
+  14:../virveldsp/src/granulator.cpp ****     
+  92              		.loc 1 14 26 view .LVU23
+  93 0004 0446     		mov	r4, r0
+  94              		.loc 1 16 5 view .LVU24
+  95 0006 90ED027A 		vldr.32	s14, [r0, #8]
+  96              		.loc 1 16 20 view .LVU25
+  97 000a 07EE905A 		vmov	s15, r5	@ int
+  98 000e F8EE677A 		vcvt.f32.u32	s15, s15
+  14:../virveldsp/src/granulator.cpp ****     
+  99              		.loc 1 14 26 view .LVU26
+ 100 0012 2DED028B 		vpush.64	{d8}
+ 101              		.cfi_def_cfa_offset 24
+ 102              		.cfi_offset 80, -24
+ 103              		.cfi_offset 81, -20
+ 104              		.loc 1 16 5 view .LVU27
+ 105 0016 B4EEE77A 		vcmpe.f32	s14, s15
+ 106 001a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 107 001e 4EDA     		bge	.L21
+ 108              	.LVL3:
+ 109              	.L4:
+  17:../virveldsp/src/granulator.cpp ****         m_active = false;
+  18:../virveldsp/src/granulator.cpp ****         m_delay = static_cast<uint32_t>(static_cast<float>(m_duration/2) * static_cast<float>(rand(
+  19:../virveldsp/src/granulator.cpp ****     }
+  20:../virveldsp/src/granulator.cpp **** 
+  21:../virveldsp/src/granulator.cpp ****     if (m_active ) {
+ 110              		.loc 1 21 5 is_stmt 1 view .LVU28
+ 111              	.LBB50:
+ 112 0020 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 113 0022 002B     		cmp	r3, #0
+ 114 0024 41D0     		beq	.L6
+ 115              	.LBB51:
+  22:../virveldsp/src/granulator.cpp **** 
+  23:../virveldsp/src/granulator.cpp ****         m_position = m_position + m_rate;
+ 116              		.loc 1 23 9 view .LVU29
+ 117              		.loc 1 23 33 is_stmt 0 view .LVU30
+ 118 0026 94ED028A 		vldr.32	s16, [r4, #8]
+ 119 002a D4ED037A 		vldr.32	s15, [r4, #12]
+  24:../virveldsp/src/granulator.cpp **** 
+  25:../virveldsp/src/granulator.cpp ****         const uint32_t int_pos = static_cast<uint32_t>(m_position);
+  26:../virveldsp/src/granulator.cpp ****         const float frac = m_position - int_pos;
+  27:../virveldsp/src/granulator.cpp **** 
+  28:../virveldsp/src/granulator.cpp ****         auto c = float(int_pos%m_duration)/float(m_duration);
+ 120              		.loc 1 28 32 view .LVU31
+ 121 002e A269     		ldr	r2, [r4, #24]
+  23:../virveldsp/src/granulator.cpp **** 
+ 122              		.loc 1 23 33 view .LVU32
+ 123 0030 38EE278A 		vadd.f32	s16, s16, s15
+ 124              		.loc 1 28 44 view .LVU33
+ 125 0034 07EE902A 		vmov	s15, r2	@ int
+ 126 0038 B8EE677A 		vcvt.f32.u32	s14, s15
+  23:../virveldsp/src/granulator.cpp **** 
+ 127              		.loc 1 23 20 view .LVU34
+ 128 003c 84ED028A 		vstr.32	s16, [r4, #8]
+  25:../virveldsp/src/granulator.cpp ****         const float frac = m_position - int_pos;
+ 129              		.loc 1 25 9 is_stmt 1 view .LVU35
+  25:../virveldsp/src/granulator.cpp ****         const float frac = m_position - int_pos;
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 4
+
+
+ 130              		.loc 1 25 24 is_stmt 0 view .LVU36
+ 131 0040 FCEEC87A 		vcvt.u32.f32	s15, s16
+  29:../virveldsp/src/granulator.cpp ****         c = sinf(M_PI* c);
+ 132              		.loc 1 29 22 view .LVU37
+ 133 0044 9FED5A6B 		vldr.64	d6, .L23
+  25:../virveldsp/src/granulator.cpp ****         const float frac = m_position - int_pos;
+ 134              		.loc 1 25 24 view .LVU38
+ 135 0048 17EE905A 		vmov	r5, s15	@ int
+ 136              	.LVL4:
+  26:../virveldsp/src/granulator.cpp **** 
+ 137              		.loc 1 26 9 is_stmt 1 view .LVU39
+  28:../virveldsp/src/granulator.cpp ****         c = sinf(M_PI* c);
+ 138              		.loc 1 28 9 view .LVU40
+ 139              		.loc 1 29 9 view .LVU41
+  28:../virveldsp/src/granulator.cpp ****         c = sinf(M_PI* c);
+ 140              		.loc 1 28 31 is_stmt 0 view .LVU42
+ 141 004c B5FBF2F3 		udiv	r3, r5, r2
+ 142 0050 02FB1353 		mls	r3, r2, r3, r5
+  28:../virveldsp/src/granulator.cpp ****         c = sinf(M_PI* c);
+ 143              		.loc 1 28 18 view .LVU43
+ 144 0054 07EE903A 		vmov	s15, r3	@ int
+ 145 0058 F8EE677A 		vcvt.f32.u32	s15, s15
+  28:../virveldsp/src/granulator.cpp ****         c = sinf(M_PI* c);
+ 146              		.loc 1 28 14 view .LVU44
+ 147 005c 87EE870A 		vdiv.f32	s0, s15, s14
+ 148              		.loc 1 29 24 view .LVU45
+ 149 0060 B7EEC00A 		vcvt.f64.f32	d0, s0
+ 150              		.loc 1 29 22 view .LVU46
+ 151 0064 20EE060B 		vmul.f64	d0, d0, d6
+ 152              		.loc 1 29 17 view .LVU47
+ 153 0068 B7EEC00B 		vcvt.f32.f64	s0, d0
+ 154 006c FFF7FEFF 		bl	sinf
+ 155              	.LVL5:
+ 156              	.LBB52:
+  30:../virveldsp/src/granulator.cpp **** 
+  31:../virveldsp/src/granulator.cpp ****         if (m_position <= 1)
+ 157              		.loc 1 31 9 view .LVU48
+ 158 0070 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 159              	.LVL6:
+ 160              		.loc 1 31 9 view .LVU49
+ 161              	.LBE52:
+ 162              		.loc 1 31 9 is_stmt 1 view .LVU50
+ 163              	.LBB65:
+ 164 0074 B4EEE78A 		vcmpe.f32	s16, s15
+ 165 0078 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 166 007c 40F28E80 		bls	.L22
+ 167              	.LBE65:
+ 168              	.LBE51:
+ 169              	.LBE50:
+  32:../virveldsp/src/granulator.cpp ****             return c*m_buf[1];
+  33:../virveldsp/src/granulator.cpp ****         else if (m_position >= (m_size  - 2))
+ 170              		.loc 1 33 14 view .LVU51
+ 171              	.LBB81:
+ 172              	.LBB75:
+ 173              	.LBB66:
+ 174              	.LBB53:
+ 175              		.loc 1 33 33 is_stmt 0 view .LVU52
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 5
+
+
+ 176 0080 E269     		ldr	r2, [r4, #28]
+ 177              		.loc 1 33 41 view .LVU53
+ 178 0082 931E     		subs	r3, r2, #2
+ 179              		.loc 1 33 29 view .LVU54
+ 180 0084 07EE903A 		vmov	s15, r3	@ int
+ 181 0088 F8EE677A 		vcvt.f32.u32	s15, s15
+ 182              		.loc 1 33 14 view .LVU55
+ 183 008c B4EEE78A 		vcmpe.f32	s16, s15
+ 184 0090 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 185 0094 27DB     		blt	.L19
+  34:../virveldsp/src/granulator.cpp ****             return c*m_buf[m_size - 2];
+ 186              		.loc 1 34 13 is_stmt 1 view .LVU56
+ 187              		.loc 1 34 38 is_stmt 0 view .LVU57
+ 188 0096 6368     		ldr	r3, [r4, #4]
+ 189 0098 03EB8202 		add	r2, r3, r2, lsl #2
+ 190              	.LBE53:
+ 191              	.LBE66:
+ 192              	.LBE75:
+ 193              	.LBE81:
+  35:../virveldsp/src/granulator.cpp **** 
+  36:../virveldsp/src/granulator.cpp ****         else {
+  37:../virveldsp/src/granulator.cpp ****             auto n = int_pos + m_offset;
+  38:../virveldsp/src/granulator.cpp **** 
+  39:../virveldsp/src/granulator.cpp ****             if (n > m_size - 2)
+  40:../virveldsp/src/granulator.cpp ****                 n = m_size - 3;
+  41:../virveldsp/src/granulator.cpp **** 
+  42:../virveldsp/src/granulator.cpp ****             const float y0 = m_buf[n-1];
+  43:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+  44:../virveldsp/src/granulator.cpp ****             const float y2 = m_buf[n+1];
+  45:../virveldsp/src/granulator.cpp ****             const float y3 = m_buf[n+2];
+  46:../virveldsp/src/granulator.cpp **** 
+  47:../virveldsp/src/granulator.cpp ****             const float c0 = y1;
+  48:../virveldsp/src/granulator.cpp ****             const float c1 = 0.5f * (y2 - y0);
+  49:../virveldsp/src/granulator.cpp ****             const float c3 = 1.5f * (y1 - y2) + 0.5f * (y3 - y0);
+  50:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+  51:../virveldsp/src/granulator.cpp **** 
+  52:../virveldsp/src/granulator.cpp ****             return c*(((c3 * frac + c2) * frac + c1) * frac + c0);
+  53:../virveldsp/src/granulator.cpp ****         }
+  54:../virveldsp/src/granulator.cpp **** 
+  55:../virveldsp/src/granulator.cpp ****     }
+  56:../virveldsp/src/granulator.cpp ****     else
+  57:../virveldsp/src/granulator.cpp ****     {
+  58:../virveldsp/src/granulator.cpp ****         if (m_delay > 0) {
+  59:../virveldsp/src/granulator.cpp ****             m_delay--;
+  60:../virveldsp/src/granulator.cpp ****             return 0.f;
+  61:../virveldsp/src/granulator.cpp ****         } 
+  62:../virveldsp/src/granulator.cpp ****         m_position = 0.f;
+  63:../virveldsp/src/granulator.cpp ****         m_offset = m_next_offset + static_cast<uint32_t>(static_cast<float>(m_jitter) * static_cast
+  64:../virveldsp/src/granulator.cpp ****         m_active = true;
+  65:../virveldsp/src/granulator.cpp ****         return 0.f;
+  66:../virveldsp/src/granulator.cpp ****     }
+  67:../virveldsp/src/granulator.cpp **** }
+ 194              		.loc 1 67 1 view .LVU58
+ 195 009c BDEC028B 		vldm	sp!, {d8}
+ 196              		.cfi_remember_state
+ 197              		.cfi_restore 80
+ 198              		.cfi_restore 81
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 6
+
+
+ 199              		.cfi_def_cfa_offset 16
+ 200              	.LVL7:
+ 201              	.LBB82:
+ 202              	.LBB76:
+ 203              	.LBB67:
+ 204              	.LBB59:
+  34:../virveldsp/src/granulator.cpp ****             return c*m_buf[m_size - 2];
+ 205              		.loc 1 34 38 view .LVU59
+ 206 00a0 52ED027A 		vldr.32	s15, [r2, #-8]
+ 207 00a4 20EE270A 		vmul.f32	s0, s0, s15
+ 208              	.LVL8:
+  34:../virveldsp/src/granulator.cpp ****             return c*m_buf[m_size - 2];
+ 209              		.loc 1 34 38 view .LVU60
+ 210              	.LBE59:
+ 211              	.LBE67:
+ 212              	.LBE76:
+ 213              	.LBE82:
+ 214              		.loc 1 67 1 view .LVU61
+ 215 00a8 38BD     		pop	{r3, r4, r5, pc}
+ 216              	.LVL9:
+ 217              	.L6:
+ 218              		.cfi_restore_state
+ 219              	.LBB83:
+  58:../virveldsp/src/granulator.cpp ****             m_delay--;
+ 220              		.loc 1 58 9 is_stmt 1 view .LVU62
+  58:../virveldsp/src/granulator.cpp ****             m_delay--;
+ 221              		.loc 1 58 13 is_stmt 0 view .LVU63
+ 222 00aa 636A     		ldr	r3, [r4, #36]
+  58:../virveldsp/src/granulator.cpp ****             m_delay--;
+ 223              		.loc 1 58 9 view .LVU64
+ 224 00ac 002B     		cmp	r3, #0
+ 225 00ae 57D0     		beq	.L14
+  59:../virveldsp/src/granulator.cpp ****             return 0.f;
+ 226              		.loc 1 59 13 is_stmt 1 view .LVU65
+  59:../virveldsp/src/granulator.cpp ****             return 0.f;
+ 227              		.loc 1 59 20 is_stmt 0 view .LVU66
+ 228 00b0 013B     		subs	r3, r3, #1
+  60:../virveldsp/src/granulator.cpp ****         } 
+ 229              		.loc 1 60 20 view .LVU67
+ 230 00b2 9FED410A 		vldr.32	s0, .L23+8
+ 231              	.LBE83:
+ 232              		.loc 1 67 1 view .LVU68
+ 233 00b6 BDEC028B 		vldm	sp!, {d8}
+ 234              		.cfi_remember_state
+ 235              		.cfi_restore 80
+ 236              		.cfi_restore 81
+ 237              		.cfi_def_cfa_offset 16
+ 238              	.LBB84:
+  59:../virveldsp/src/granulator.cpp ****             return 0.f;
+ 239              		.loc 1 59 20 view .LVU69
+ 240 00ba 6362     		str	r3, [r4, #36]
+  60:../virveldsp/src/granulator.cpp ****         } 
+ 241              		.loc 1 60 13 is_stmt 1 view .LVU70
+ 242              	.LBE84:
+ 243              		.loc 1 67 1 is_stmt 0 view .LVU71
+ 244 00bc 38BD     		pop	{r3, r4, r5, pc}
+ 245              	.LVL10:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 7
+
+
+ 246              	.L21:
+ 247              		.cfi_restore_state
+  17:../virveldsp/src/granulator.cpp ****         m_delay = static_cast<uint32_t>(static_cast<float>(m_duration/2) * static_cast<float>(rand(
+ 248              		.loc 1 17 9 is_stmt 1 view .LVU72
+  17:../virveldsp/src/granulator.cpp ****         m_delay = static_cast<uint32_t>(static_cast<float>(m_duration/2) * static_cast<float>(rand(
+ 249              		.loc 1 17 18 is_stmt 0 view .LVU73
+ 250 00be 0023     		movs	r3, #0
+  18:../virveldsp/src/granulator.cpp ****     }
+ 251              		.loc 1 18 70 view .LVU74
+ 252 00c0 6D08     		lsrs	r5, r5, #1
+  17:../virveldsp/src/granulator.cpp ****         m_delay = static_cast<uint32_t>(static_cast<float>(m_duration/2) * static_cast<float>(rand(
+ 253              		.loc 1 17 18 view .LVU75
+ 254 00c2 0370     		strb	r3, [r0]
+  18:../virveldsp/src/granulator.cpp ****     }
+ 255              		.loc 1 18 9 is_stmt 1 view .LVU76
+  18:../virveldsp/src/granulator.cpp ****     }
+ 256              		.loc 1 18 99 is_stmt 0 view .LVU77
+ 257 00c4 FFF7FEFF 		bl	rand
+ 258              	.LVL11:
+  18:../virveldsp/src/granulator.cpp ****     }
+ 259              		.loc 1 18 41 view .LVU78
+ 260 00c8 07EE105A 		vmov	s14, r5	@ int
+  18:../virveldsp/src/granulator.cpp ****     }
+ 261              		.loc 1 18 102 view .LVU79
+ 262 00cc 07EE900A 		vmov	s15, r0	@ int
+  18:../virveldsp/src/granulator.cpp ****     }
+ 263              		.loc 1 18 41 view .LVU80
+ 264 00d0 B8EEC77A 		vcvt.f32.s32	s14, s14
+  18:../virveldsp/src/granulator.cpp ****     }
+ 265              		.loc 1 18 102 view .LVU81
+ 266 00d4 FAEEE07A 		vcvt.f32.s32	s15, s15, #31
+  18:../virveldsp/src/granulator.cpp ****     }
+ 267              		.loc 1 18 74 view .LVU82
+ 268 00d8 67EE277A 		vmul.f32	s15, s14, s15
+  18:../virveldsp/src/granulator.cpp ****     }
+ 269              		.loc 1 18 19 view .LVU83
+ 270 00dc FCEEE77A 		vcvt.u32.f32	s15, s15
+ 271 00e0 C4ED097A 		vstr.32	s15, [r4, #36]	@ int
+ 272 00e4 9CE7     		b	.L4
+ 273              	.LVL12:
+ 274              	.L19:
+ 275              	.LBB85:
+ 276              	.LBB77:
+ 277              	.LBB68:
+ 278              	.LBB60:
+ 279              	.LBB54:
+  37:../virveldsp/src/granulator.cpp **** 
+ 280              		.loc 1 37 13 is_stmt 1 view .LVU84
+  37:../virveldsp/src/granulator.cpp **** 
+ 281              		.loc 1 37 18 is_stmt 0 view .LVU85
+ 282 00e6 2169     		ldr	r1, [r4, #16]
+  42:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+ 283              		.loc 1 42 39 view .LVU86
+ 284 00e8 6FF04040 		mvn	r0, #-1073741824
+ 285              	.LBE54:
+ 286              	.LBE60:
+ 287              	.LBE68:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 8
+
+
+  26:../virveldsp/src/granulator.cpp **** 
+ 288              		.loc 1 26 39 view .LVU87
+ 289 00ec 07EE905A 		vmov	s15, r5	@ int
+ 290              	.LBB69:
+ 291              	.LBB61:
+ 292              	.LBB55:
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 293              		.loc 1 49 54 view .LVU88
+ 294 00f0 B6EE005A 		vmov.f32	s10, #5.0e-1
+  37:../virveldsp/src/granulator.cpp **** 
+ 295              		.loc 1 37 18 view .LVU89
+ 296 00f4 2944     		add	r1, r1, r5
+ 297              	.LVL13:
+  39:../virveldsp/src/granulator.cpp ****                 n = m_size - 3;
+ 298              		.loc 1 39 13 is_stmt 1 view .LVU90
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 299              		.loc 1 49 25 is_stmt 0 view .LVU91
+ 300 00f6 F7EE084A 		vmov.f32	s9, #1.5e+0
+ 301              	.LBE55:
+ 302              	.LBE61:
+ 303              	.LBE69:
+  26:../virveldsp/src/granulator.cpp **** 
+ 304              		.loc 1 26 39 view .LVU92
+ 305 00fa B8EE677A 		vcvt.f32.u32	s14, s15
+ 306              	.LBB70:
+ 307              	.LBB62:
+ 308              	.LBB56:
+  39:../virveldsp/src/granulator.cpp ****                 n = m_size - 3;
+ 309              		.loc 1 39 13 view .LVU93
+ 310 00fe 8B42     		cmp	r3, r1
+  40:../virveldsp/src/granulator.cpp **** 
+ 311              		.loc 1 40 19 view .LVU94
+ 312 0100 34BF     		ite	cc
+ 313 0102 D11E     		subcc	r1, r2, #3
+ 314              	.LVL14:
+  44:../virveldsp/src/granulator.cpp ****             const float y3 = m_buf[n+2];
+ 315              		.loc 1 44 39 view .LVU95
+ 316 0104 4B1C     		addcs	r3, r1, #1
+  40:../virveldsp/src/granulator.cpp **** 
+ 317              		.loc 1 40 17 is_stmt 1 view .LVU96
+ 318              	.LVL15:
+  42:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+ 319              		.loc 1 42 30 is_stmt 0 view .LVU97
+ 320 0106 6268     		ldr	r2, [r4, #4]
+ 321              	.LBE56:
+ 322              	.LBE62:
+ 323              	.LBE70:
+  26:../virveldsp/src/granulator.cpp **** 
+ 324              		.loc 1 26 21 view .LVU98
+ 325 0108 38EE478A 		vsub.f32	s16, s16, s14
+ 326              	.LVL16:
+ 327              	.LBB71:
+ 328              	.LBB63:
+ 329              	.LBB57:
+  42:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+ 330              		.loc 1 42 39 view .LVU99
+ 331 010c 0844     		add	r0, r0, r1
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 9
+
+
+  42:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+ 332              		.loc 1 42 13 is_stmt 1 view .LVU100
+  44:../virveldsp/src/granulator.cpp ****             const float y3 = m_buf[n+2];
+ 333              		.loc 1 44 25 is_stmt 0 view .LVU101
+ 334 010e 02EB8303 		add	r3, r2, r3, lsl #2
+  42:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+ 335              		.loc 1 42 25 view .LVU102
+ 336 0112 02EB8002 		add	r2, r2, r0, lsl #2
+  44:../virveldsp/src/granulator.cpp ****             const float y3 = m_buf[n+2];
+ 337              		.loc 1 44 25 view .LVU103
+ 338 0116 D3ED005A 		vldr.32	s11, [r3]
+  42:../virveldsp/src/granulator.cpp ****             const float y1 = m_buf[n];
+ 339              		.loc 1 42 25 view .LVU104
+ 340 011a D2ED007A 		vldr.32	s15, [r2]
+ 341              	.LVL17:
+  43:../virveldsp/src/granulator.cpp ****             const float y2 = m_buf[n+1];
+ 342              		.loc 1 43 13 is_stmt 1 view .LVU105
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 343              		.loc 1 49 60 is_stmt 0 view .LVU106
+ 344 011e D2ED036A 		vldr.32	s13, [r2, #12]
+  43:../virveldsp/src/granulator.cpp ****             const float y2 = m_buf[n+1];
+ 345              		.loc 1 43 25 view .LVU107
+ 346 0122 92ED016A 		vldr.32	s12, [r2, #4]
+ 347              	.LVL18:
+  44:../virveldsp/src/granulator.cpp ****             const float y3 = m_buf[n+2];
+ 348              		.loc 1 44 13 is_stmt 1 view .LVU108
+  45:../virveldsp/src/granulator.cpp **** 
+ 349              		.loc 1 45 13 view .LVU109
+  47:../virveldsp/src/granulator.cpp ****             const float c1 = 0.5f * (y2 - y0);
+ 350              		.loc 1 47 13 view .LVU110
+  48:../virveldsp/src/granulator.cpp ****             const float c3 = 1.5f * (y1 - y2) + 0.5f * (y3 - y0);
+ 351              		.loc 1 48 13 view .LVU111
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 352              		.loc 1 49 60 is_stmt 0 view .LVU112
+ 353 0126 36EEE77A 		vsub.f32	s14, s13, s15
+  48:../virveldsp/src/granulator.cpp ****             const float c3 = 1.5f * (y1 - y2) + 0.5f * (y3 - y0);
+ 354              		.loc 1 48 41 view .LVU113
+ 355 012a 75EEE76A 		vsub.f32	s13, s11, s15
+ 356              	.LVL19:
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 357              		.loc 1 49 13 is_stmt 1 view .LVU114
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 358              		.loc 1 49 41 is_stmt 0 view .LVU115
+ 359 012e 76EE655A 		vsub.f32	s11, s12, s11
+ 360              	.LVL20:
+  50:../virveldsp/src/granulator.cpp **** 
+ 361              		.loc 1 50 33 view .LVU116
+ 362 0132 77EEC67A 		vsub.f32	s15, s15, s12
+ 363              	.LVL21:
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 364              		.loc 1 49 54 view .LVU117
+ 365 0136 27EE057A 		vmul.f32	s14, s14, s10
+  50:../virveldsp/src/granulator.cpp **** 
+ 366              		.loc 1 50 38 view .LVU118
+ 367 013a E6EE857A 		vfma.f32	s15, s13, s10
+  49:../virveldsp/src/granulator.cpp ****             const float c2 = y0 - y1 + c1 - c3;
+ 368              		.loc 1 49 25 view .LVU119
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 10
+
+
+ 369 013e A5EEA47A 		vfma.f32	s14, s11, s9
+ 370              	.LVL22:
+  50:../virveldsp/src/granulator.cpp **** 
+ 371              		.loc 1 50 13 is_stmt 1 view .LVU120
+  52:../virveldsp/src/granulator.cpp ****         }
+ 372              		.loc 1 52 13 view .LVU121
+  50:../virveldsp/src/granulator.cpp **** 
+ 373              		.loc 1 50 25 is_stmt 0 view .LVU122
+ 374 0142 77EEC77A 		vsub.f32	s15, s15, s14
+ 375              	.LVL23:
+  52:../virveldsp/src/granulator.cpp ****         }
+ 376              		.loc 1 52 35 view .LVU123
+ 377 0146 E8EE077A 		vfma.f32	s15, s16, s14
+ 378              	.LVL24:
+  52:../virveldsp/src/granulator.cpp ****         }
+ 379              		.loc 1 52 41 view .LVU124
+ 380 014a 67EE887A 		vmul.f32	s15, s15, s16
+  52:../virveldsp/src/granulator.cpp ****         }
+ 381              		.loc 1 52 48 view .LVU125
+ 382 014e E6EE857A 		vfma.f32	s15, s13, s10
+  52:../virveldsp/src/granulator.cpp ****         }
+ 383              		.loc 1 52 61 view .LVU126
+ 384 0152 A7EE886A 		vfma.f32	s12, s15, s16
+ 385              	.LVL25:
+  52:../virveldsp/src/granulator.cpp ****         }
+ 386              		.loc 1 52 61 view .LVU127
+ 387              	.LBE57:
+ 388              	.LBE63:
+ 389              	.LBE71:
+ 390              	.LBE77:
+ 391              	.LBE85:
+ 392              		.loc 1 67 1 view .LVU128
+ 393 0156 BDEC028B 		vldm	sp!, {d8}
+ 394              		.cfi_remember_state
+ 395              		.cfi_restore 80
+ 396              		.cfi_restore 81
+ 397              		.cfi_def_cfa_offset 16
+ 398              	.LBB86:
+ 399              	.LBB78:
+ 400              	.LBB72:
+ 401              	.LBB64:
+ 402              	.LBB58:
+  52:../virveldsp/src/granulator.cpp ****         }
+ 403              		.loc 1 52 65 view .LVU129
+ 404 015a 26EE000A 		vmul.f32	s0, s12, s0
+ 405              	.LVL26:
+  52:../virveldsp/src/granulator.cpp ****         }
+ 406              		.loc 1 52 65 view .LVU130
+ 407              	.LBE58:
+ 408              	.LBE64:
+ 409              	.LBE72:
+ 410              	.LBE78:
+ 411              	.LBE86:
+ 412              		.loc 1 67 1 view .LVU131
+ 413 015e 38BD     		pop	{r3, r4, r5, pc}
+ 414              	.LVL27:
+ 415              	.L14:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 11
+
+
+ 416              		.cfi_restore_state
+ 417              	.LBB87:
+  62:../virveldsp/src/granulator.cpp ****         m_offset = m_next_offset + static_cast<uint32_t>(static_cast<float>(m_jitter) * static_cast
+ 418              		.loc 1 62 9 is_stmt 1 view .LVU132
+  62:../virveldsp/src/granulator.cpp ****         m_offset = m_next_offset + static_cast<uint32_t>(static_cast<float>(m_jitter) * static_cast
+ 419              		.loc 1 62 20 is_stmt 0 view .LVU133
+ 420 0160 9FED158A 		vldr.32	s16, .L23+8
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 421              		.loc 1 63 58 view .LVU134
+ 422 0164 D4ED087A 		vldr.32	s15, [r4, #32]	@ int
+  62:../virveldsp/src/granulator.cpp ****         m_offset = m_next_offset + static_cast<uint32_t>(static_cast<float>(m_jitter) * static_cast
+ 423              		.loc 1 62 20 view .LVU135
+ 424 0168 84ED028A 		vstr.32	s16, [r4, #8]
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 425              		.loc 1 63 9 is_stmt 1 view .LVU136
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 426              		.loc 1 63 58 is_stmt 0 view .LVU137
+ 427 016c F8EE678A 		vcvt.f32.u32	s17, s15
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 428              		.loc 1 63 20 view .LVU138
+ 429 0170 6569     		ldr	r5, [r4, #20]
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 430              		.loc 1 63 112 view .LVU139
+ 431 0172 FFF7FEFF 		bl	rand
+ 432              	.LVL28:
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 433              		.loc 1 63 115 view .LVU140
+ 434 0176 07EE900A 		vmov	s15, r0	@ int
+  64:../virveldsp/src/granulator.cpp ****         return 0.f;
+ 435              		.loc 1 64 18 view .LVU141
+ 436 017a 0123     		movs	r3, #1
+  65:../virveldsp/src/granulator.cpp ****     }
+ 437              		.loc 1 65 16 view .LVU142
+ 438 017c B0EE480A 		vmov.f32	s0, s16
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 439              		.loc 1 63 115 view .LVU143
+ 440 0180 FAEEE07A 		vcvt.f32.s32	s15, s15, #31
+  64:../virveldsp/src/granulator.cpp ****         return 0.f;
+ 441              		.loc 1 64 18 view .LVU144
+ 442 0184 2370     		strb	r3, [r4]
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 443              		.loc 1 63 87 view .LVU145
+ 444 0186 67EEA87A 		vmul.f32	s15, s15, s17
+ 445              	.LBE87:
+ 446              		.loc 1 67 1 view .LVU146
+ 447 018a BDEC028B 		vldm	sp!, {d8}
+ 448              		.cfi_remember_state
+ 449              		.cfi_restore 80
+ 450              		.cfi_restore 81
+ 451              		.cfi_def_cfa_offset 16
+ 452              	.LBB88:
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 453              		.loc 1 63 36 view .LVU147
+ 454 018e FCEEE77A 		vcvt.u32.f32	s15, s15
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 455              		.loc 1 63 34 view .LVU148
+ 456 0192 17EE903A 		vmov	r3, s15	@ int
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 12
+
+
+ 457 0196 2B44     		add	r3, r3, r5
+  63:../virveldsp/src/granulator.cpp ****         m_active = true;
+ 458              		.loc 1 63 18 view .LVU149
+ 459 0198 2361     		str	r3, [r4, #16]
+  64:../virveldsp/src/granulator.cpp ****         return 0.f;
+ 460              		.loc 1 64 9 is_stmt 1 view .LVU150
+  65:../virveldsp/src/granulator.cpp ****     }
+ 461              		.loc 1 65 9 view .LVU151
+ 462              	.LBE88:
+ 463              		.loc 1 67 1 is_stmt 0 view .LVU152
+ 464 019a 38BD     		pop	{r3, r4, r5, pc}
+ 465              	.LVL29:
+ 466              	.L22:
+ 467              		.cfi_restore_state
+ 468              	.LBB89:
+ 469              	.LBB79:
+ 470              	.LBB73:
+  32:../virveldsp/src/granulator.cpp ****         else if (m_position >= (m_size  - 2))
+ 471              		.loc 1 32 13 is_stmt 1 view .LVU153
+  32:../virveldsp/src/granulator.cpp ****         else if (m_position >= (m_size  - 2))
+ 472              		.loc 1 32 29 is_stmt 0 view .LVU154
+ 473 019c 6368     		ldr	r3, [r4, #4]
+ 474              	.LBE73:
+ 475              	.LBE79:
+ 476              	.LBE89:
+ 477              		.loc 1 67 1 view .LVU155
+ 478 019e BDEC028B 		vldm	sp!, {d8}
+ 479              		.cfi_restore 80
+ 480              		.cfi_restore 81
+ 481              		.cfi_def_cfa_offset 16
+ 482              	.LVL30:
+ 483              	.LBB90:
+ 484              	.LBB80:
+ 485              	.LBB74:
+  32:../virveldsp/src/granulator.cpp ****         else if (m_position >= (m_size  - 2))
+ 486              		.loc 1 32 29 view .LVU156
+ 487 01a2 D3ED017A 		vldr.32	s15, [r3, #4]
+ 488 01a6 20EE270A 		vmul.f32	s0, s0, s15
+ 489              	.LVL31:
+  32:../virveldsp/src/granulator.cpp ****         else if (m_position >= (m_size  - 2))
+ 490              		.loc 1 32 29 view .LVU157
+ 491              	.LBE74:
+ 492              	.LBE80:
+ 493              	.LBE90:
+ 494              		.loc 1 67 1 view .LVU158
+ 495 01aa 38BD     		pop	{r3, r4, r5, pc}
+ 496              	.LVL32:
+ 497              	.L24:
+ 498              		.loc 1 67 1 view .LVU159
+ 499 01ac AFF30080 		.align	3
+ 500              	.L23:
+ 501 01b0 182D4454 		.word	1413754136
+ 502 01b4 FB210940 		.word	1074340347
+ 503 01b8 00000000 		.word	0
+ 504              		.cfi_endproc
+ 505              	.LFE4740:
+ 507              		.section	.text._ZN3dsp5Grain11setDurationEf,"ax",%progbits
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 13
+
+
+ 508              		.align	1
+ 509              		.p2align 2,,3
+ 510              		.global	_ZN3dsp5Grain11setDurationEf
+ 511              		.syntax unified
+ 512              		.thumb
+ 513              		.thumb_func
+ 515              	_ZN3dsp5Grain11setDurationEf:
+ 516              	.LVL33:
+ 517              	.LFB4741:
+  68:../virveldsp/src/granulator.cpp **** 
+  69:../virveldsp/src/granulator.cpp **** void dsp::Grain::setDuration(const float s) {
+ 518              		.loc 1 69 45 is_stmt 1 view -0
+ 519              		.cfi_startproc
+ 520              		@ args = 0, pretend = 0, frame = 0
+ 521              		@ frame_needed = 0, uses_anonymous_args = 0
+ 522              		@ link register save eliminated.
+  70:../virveldsp/src/granulator.cpp ****     {
+ 523              		.loc 1 70 5 view .LVU161
+  71:../virveldsp/src/granulator.cpp ****         m_duration = std::max(static_cast<uint32_t>(10), static_cast<uint32_t>(s * static_cast<floa
+ 524              		.loc 1 71 9 view .LVU162
+ 525              		.loc 1 71 84 is_stmt 0 view .LVU163
+ 526 0000 D0ED077A 		vldr.32	s15, [r0, #28]	@ int
+ 527 0004 F8EE677A 		vcvt.f32.u32	s15, s15
+ 528              		.loc 1 71 82 view .LVU164
+ 529 0008 27EE800A 		vmul.f32	s0, s15, s0
+ 530              	.LVL34:
+ 531              		.loc 1 71 58 view .LVU165
+ 532 000c FCEEC07A 		vcvt.u32.f32	s15, s0
+ 533 0010 17EE903A 		vmov	r3, s15	@ int
+ 534              		.loc 1 71 20 view .LVU166
+ 535 0014 0A2B     		cmp	r3, #10
+ 536 0016 38BF     		it	cc
+ 537 0018 0A23     		movcc	r3, #10
+ 538 001a 8361     		str	r3, [r0, #24]
+  72:../virveldsp/src/granulator.cpp ****     }
+  73:../virveldsp/src/granulator.cpp **** }
+ 539              		.loc 1 73 1 view .LVU167
+ 540 001c 7047     		bx	lr
+ 541              		.cfi_endproc
+ 542              	.LFE4741:
+ 544 001e 00BF     		.section	.text._ZN3dsp10Granulator4initEPfm,"ax",%progbits
+ 545              		.align	1
+ 546              		.p2align 2,,3
+ 547              		.global	_ZN3dsp10Granulator4initEPfm
+ 548              		.syntax unified
+ 549              		.thumb
+ 550              		.thumb_func
+ 552              	_ZN3dsp10Granulator4initEPfm:
+ 553              	.LVL35:
+ 554              	.LFB4742:
+  74:../virveldsp/src/granulator.cpp **** 
+  75:../virveldsp/src/granulator.cpp **** void dsp::Granulator::init(float * const buffer, const uint32_t numSamples) {
+ 555              		.loc 1 75 77 is_stmt 1 view -0
+ 556              		.cfi_startproc
+ 557              		@ args = 0, pretend = 0, frame = 0
+ 558              		@ frame_needed = 0, uses_anonymous_args = 0
+  76:../virveldsp/src/granulator.cpp ****     m_numSamples = numSamples/2;
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 14
+
+
+ 559              		.loc 1 76 5 view .LVU169
+  75:../virveldsp/src/granulator.cpp ****     m_numSamples = numSamples/2;
+ 560              		.loc 1 75 77 is_stmt 0 view .LVU170
+ 561 0000 30B5     		push	{r4, r5, lr}
+ 562              		.cfi_def_cfa_offset 12
+ 563              		.cfi_offset 4, -12
+ 564              		.cfi_offset 5, -8
+ 565              		.cfi_offset 14, -4
+ 566              		.loc 1 76 30 view .LVU171
+ 567 0002 5208     		lsrs	r2, r2, #1
+ 568              	.LVL36:
+  77:../virveldsp/src/granulator.cpp ****     m_buffer = buffer;
+ 569              		.loc 1 77 14 view .LVU172
+ 570 0004 0346     		mov	r3, r0
+ 571 0006 00F50675 		add	r5, r0, #536
+  76:../virveldsp/src/granulator.cpp ****     m_numSamples = numSamples/2;
+ 572              		.loc 1 76 18 view .LVU173
+ 573 000a 8260     		str	r2, [r0, #8]
+ 574              		.loc 1 77 5 is_stmt 1 view .LVU174
+ 575              		.loc 1 77 14 is_stmt 0 view .LVU175
+ 576 000c 43F8381B 		str	r1, [r3], #56
+  78:../virveldsp/src/granulator.cpp **** 
+  79:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft) 
+ 577              		.loc 1 79 5 is_stmt 1 view .LVU176
+ 578              	.LVL37:
+ 579              	.LBB91:
+ 580              		.loc 1 79 20 view .LVU177
+ 581              	.L27:
+  80:../virveldsp/src/granulator.cpp ****         g.init(buffer, numSamples/2);
+ 582              		.loc 1 80 9 discriminator 2 view .LVU178
+ 583              	.LBB92:
+ 584              	.LBI92:
+   3:../virveldsp/src/granulator.cpp ****     m_buf = buffer;
+ 585              		.loc 1 3 6 discriminator 2 view .LVU179
+ 586              	.LBB93:
+   4:../virveldsp/src/granulator.cpp ****     m_active = false;
+ 587              		.loc 1 4 5 discriminator 2 view .LVU180
+   5:../virveldsp/src/granulator.cpp ****     m_position = 0;
+ 588              		.loc 1 5 14 is_stmt 0 discriminator 2 view .LVU181
+ 589 0010 0024     		movs	r4, #0
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+ 590              		.loc 1 8 12 discriminator 2 view .LVU182
+ 591 0012 4FF07E5C 		mov	ip, #1065353216
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+ 592              		.loc 1 6 16 discriminator 2 view .LVU183
+ 593 0016 4FF0000E 		mov	lr, #0
+   4:../virveldsp/src/granulator.cpp ****     m_active = false;
+ 594              		.loc 1 4 11 discriminator 2 view .LVU184
+ 595 001a 43F8241C 		str	r1, [r3, #-36]
+   5:../virveldsp/src/granulator.cpp ****     m_position = 0;
+ 596              		.loc 1 5 5 is_stmt 1 discriminator 2 view .LVU185
+   5:../virveldsp/src/granulator.cpp ****     m_position = 0;
+ 597              		.loc 1 5 14 is_stmt 0 discriminator 2 view .LVU186
+ 598 001e 03F8284C 		strb	r4, [r3, #-40]
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+ 599              		.loc 1 6 5 is_stmt 1 discriminator 2 view .LVU187
+   7:../virveldsp/src/granulator.cpp ****     m_rate = 1.f;
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 15
+
+
+ 600              		.loc 1 7 12 is_stmt 0 discriminator 2 view .LVU188
+ 601 0022 43F80C2C 		str	r2, [r3, #-12]
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+ 602              		.loc 1 6 16 discriminator 2 view .LVU189
+ 603 0026 43F820EC 		str	lr, [r3, #-32]	@ float
+   7:../virveldsp/src/granulator.cpp ****     m_rate = 1.f;
+ 604              		.loc 1 7 5 is_stmt 1 discriminator 2 view .LVU190
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+ 605              		.loc 1 8 5 discriminator 2 view .LVU191
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+ 606              		.loc 1 8 12 is_stmt 0 discriminator 2 view .LVU192
+ 607 002a 43F81CCC 		str	ip, [r3, #-28]	@ float
+   9:../virveldsp/src/granulator.cpp ****     m_offset = 0;
+ 608              		.loc 1 9 5 is_stmt 1 discriminator 2 view .LVU193
+   9:../virveldsp/src/granulator.cpp ****     m_offset = 0;
+ 609              		.loc 1 9 16 is_stmt 0 discriminator 2 view .LVU194
+ 610 002e 43F8102C 		str	r2, [r3, #-16]
+  10:../virveldsp/src/granulator.cpp ****     m_next_offset = 0;
+ 611              		.loc 1 10 5 is_stmt 1 discriminator 2 view .LVU195
+  11:../virveldsp/src/granulator.cpp **** }
+ 612              		.loc 1 11 19 is_stmt 0 discriminator 2 view .LVU196
+ 613 0032 43E90644 		strd	r4, r4, [r3, #-24]
+ 614              	.LVL38:
+  11:../virveldsp/src/granulator.cpp **** }
+ 615              		.loc 1 11 19 discriminator 2 view .LVU197
+ 616              	.LBE93:
+ 617              	.LBE92:
+  79:../virveldsp/src/granulator.cpp ****         g.init(buffer, numSamples/2);
+ 618              		.loc 1 79 5 is_stmt 1 discriminator 2 view .LVU198
+  79:../virveldsp/src/granulator.cpp ****         g.init(buffer, numSamples/2);
+ 619              		.loc 1 79 20 discriminator 2 view .LVU199
+ 620 0036 2833     		adds	r3, r3, #40
+ 621              	.LVL39:
+  79:../virveldsp/src/granulator.cpp ****         g.init(buffer, numSamples/2);
+ 622              		.loc 1 79 20 is_stmt 0 discriminator 2 view .LVU200
+ 623 0038 AB42     		cmp	r3, r5
+ 624 003a E9D1     		bne	.L27
+  79:../virveldsp/src/granulator.cpp ****         g.init(buffer, numSamples/2);
+ 625              		.loc 1 79 20 discriminator 2 view .LVU201
+ 626              	.LBE91:
+  81:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight) 
+ 627              		.loc 1 81 5 is_stmt 1 view .LVU202
+ 628              	.LVL40:
+ 629              	.LBB94:
+ 630              		.loc 1 81 20 view .LVU203
+  82:../virveldsp/src/granulator.cpp ****         g.init(&buffer[numSamples/2], numSamples/2);
+ 631              		.loc 1 82 15 is_stmt 0 view .LVU204
+ 632 003c 01EB8204 		add	r4, r1, r2, lsl #2
+ 633 0040 00F57E7E 		add	lr, r0, #1016
+ 634              	.LVL41:
+ 635              	.L28:
+ 636              		.loc 1 82 9 is_stmt 1 discriminator 2 view .LVU205
+ 637              	.LBB95:
+ 638              	.LBI95:
+   3:../virveldsp/src/granulator.cpp ****     m_buf = buffer;
+ 639              		.loc 1 3 6 discriminator 2 view .LVU206
+ 640              	.LBB96:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 16
+
+
+   4:../virveldsp/src/granulator.cpp ****     m_active = false;
+ 641              		.loc 1 4 5 discriminator 2 view .LVU207
+   5:../virveldsp/src/granulator.cpp ****     m_position = 0;
+ 642              		.loc 1 5 14 is_stmt 0 discriminator 2 view .LVU208
+ 643 0044 0021     		movs	r1, #0
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+ 644              		.loc 1 8 12 discriminator 2 view .LVU209
+ 645 0046 4FF07E50 		mov	r0, #1065353216
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+ 646              		.loc 1 6 16 discriminator 2 view .LVU210
+ 647 004a 4FF0000C 		mov	ip, #0
+   4:../virveldsp/src/granulator.cpp ****     m_active = false;
+ 648              		.loc 1 4 11 discriminator 2 view .LVU211
+ 649 004e 43F8244C 		str	r4, [r3, #-36]
+   5:../virveldsp/src/granulator.cpp ****     m_position = 0;
+ 650              		.loc 1 5 5 is_stmt 1 discriminator 2 view .LVU212
+   5:../virveldsp/src/granulator.cpp ****     m_position = 0;
+ 651              		.loc 1 5 14 is_stmt 0 discriminator 2 view .LVU213
+ 652 0052 03F8281C 		strb	r1, [r3, #-40]
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+ 653              		.loc 1 6 5 is_stmt 1 discriminator 2 view .LVU214
+   7:../virveldsp/src/granulator.cpp ****     m_rate = 1.f;
+ 654              		.loc 1 7 12 is_stmt 0 discriminator 2 view .LVU215
+ 655 0056 43F80C2C 		str	r2, [r3, #-12]
+   6:../virveldsp/src/granulator.cpp ****     m_size = size;
+ 656              		.loc 1 6 16 discriminator 2 view .LVU216
+ 657 005a 43F820CC 		str	ip, [r3, #-32]	@ float
+   7:../virveldsp/src/granulator.cpp ****     m_rate = 1.f;
+ 658              		.loc 1 7 5 is_stmt 1 discriminator 2 view .LVU217
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+ 659              		.loc 1 8 5 discriminator 2 view .LVU218
+   8:../virveldsp/src/granulator.cpp ****     m_duration = m_size;
+ 660              		.loc 1 8 12 is_stmt 0 discriminator 2 view .LVU219
+ 661 005e 43F81C0C 		str	r0, [r3, #-28]	@ float
+   9:../virveldsp/src/granulator.cpp ****     m_offset = 0;
+ 662              		.loc 1 9 5 is_stmt 1 discriminator 2 view .LVU220
+   9:../virveldsp/src/granulator.cpp ****     m_offset = 0;
+ 663              		.loc 1 9 16 is_stmt 0 discriminator 2 view .LVU221
+ 664 0062 43F8102C 		str	r2, [r3, #-16]
+  10:../virveldsp/src/granulator.cpp ****     m_next_offset = 0;
+ 665              		.loc 1 10 5 is_stmt 1 discriminator 2 view .LVU222
+  11:../virveldsp/src/granulator.cpp **** }
+ 666              		.loc 1 11 19 is_stmt 0 discriminator 2 view .LVU223
+ 667 0066 43E90611 		strd	r1, r1, [r3, #-24]
+ 668              	.LVL42:
+  11:../virveldsp/src/granulator.cpp **** }
+ 669              		.loc 1 11 19 discriminator 2 view .LVU224
+ 670              	.LBE96:
+ 671              	.LBE95:
+  81:../virveldsp/src/granulator.cpp ****         g.init(&buffer[numSamples/2], numSamples/2);
+ 672              		.loc 1 81 5 is_stmt 1 discriminator 2 view .LVU225
+  81:../virveldsp/src/granulator.cpp ****         g.init(&buffer[numSamples/2], numSamples/2);
+ 673              		.loc 1 81 20 discriminator 2 view .LVU226
+ 674 006a 2833     		adds	r3, r3, #40
+ 675              	.LVL43:
+  81:../virveldsp/src/granulator.cpp ****         g.init(&buffer[numSamples/2], numSamples/2);
+ 676              		.loc 1 81 20 is_stmt 0 discriminator 2 view .LVU227
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 17
+
+
+ 677 006c 7345     		cmp	r3, lr
+ 678 006e E9D1     		bne	.L28
+ 679              	.LBE94:
+  83:../virveldsp/src/granulator.cpp **** }
+ 680              		.loc 1 83 1 view .LVU228
+ 681 0070 30BD     		pop	{r4, r5, pc}
+ 682              		.loc 1 83 1 view .LVU229
+ 683              		.cfi_endproc
+ 684              	.LFE4742:
+ 686 0072 00BF     		.section	.text._ZN3dsp10Granulator9setOffsetEf,"ax",%progbits
+ 687              		.align	1
+ 688              		.p2align 2,,3
+ 689              		.global	_ZN3dsp10Granulator9setOffsetEf
+ 690              		.syntax unified
+ 691              		.thumb
+ 692              		.thumb_func
+ 694              	_ZN3dsp10Granulator9setOffsetEf:
+ 695              	.LVL44:
+ 696              	.LFB4743:
+  84:../virveldsp/src/granulator.cpp **** 
+  85:../virveldsp/src/granulator.cpp **** void dsp::Granulator::setOffset(const float offset) {
+ 697              		.loc 1 85 53 is_stmt 1 view -0
+ 698              		.cfi_startproc
+ 699              		@ args = 0, pretend = 0, frame = 0
+ 700              		@ frame_needed = 0, uses_anonymous_args = 0
+ 701              		@ link register save eliminated.
+  86:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft) 
+ 702              		.loc 1 86 5 view .LVU231
+ 703              	.LBB97:
+ 704              		.loc 1 86 20 view .LVU232
+ 705 0000 00F13803 		add	r3, r0, #56
+ 706 0004 00F5067C 		add	ip, r0, #536
+ 707              	.LVL45:
+ 708              	.L33:
+  87:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 709              		.loc 1 87 9 discriminator 2 view .LVU233
+ 710              	.LBB98:
+ 711              	.LBI98:
+ 712              		.file 2 "../virveldsp/src/granulator.h"
+   1:../virveldsp/src/granulator.h **** #pragma once
+   2:../virveldsp/src/granulator.h **** #include "daisy.h"
+   3:../virveldsp/src/granulator.h **** #include "daisysp.h"
+   4:../virveldsp/src/granulator.h **** 
+   5:../virveldsp/src/granulator.h **** namespace dsp {
+   6:../virveldsp/src/granulator.h **** 
+   7:../virveldsp/src/granulator.h ****     class Grain
+   8:../virveldsp/src/granulator.h ****     {
+   9:../virveldsp/src/granulator.h **** 
+  10:../virveldsp/src/granulator.h ****     public:
+  11:../virveldsp/src/granulator.h ****         void init(float * const buffer, uint32_t size);
+  12:../virveldsp/src/granulator.h ****         float play();
+  13:../virveldsp/src/granulator.h ****         void setActive(const bool active) { m_active = active; }
+  14:../virveldsp/src/granulator.h ****         void setRate(const float rate) { m_rate = rate; }
+  15:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 713              		.loc 2 15 14 discriminator 2 view .LVU234
+ 714              	.LBB99:
+ 715              		.loc 2 15 43 discriminator 2 view .LVU235
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 18
+
+
+ 716              		.loc 2 15 115 is_stmt 0 discriminator 2 view .LVU236
+ 717 0008 53E90412 		ldrd	r1, r2, [r3, #-16]
+ 718              	.LBE99:
+ 719              	.LBE98:
+  86:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 720              		.loc 1 86 20 discriminator 2 view .LVU237
+ 721 000c 2833     		adds	r3, r3, #40
+ 722              	.LVL46:
+ 723              	.LBB106:
+ 724              	.LBB104:
+ 725              		.loc 2 15 115 discriminator 2 view .LVU238
+ 726 000e 521A     		subs	r2, r2, r1
+ 727              	.LBE104:
+ 728              	.LBE106:
+  86:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 729              		.loc 1 86 20 discriminator 2 view .LVU239
+ 730 0010 6345     		cmp	r3, ip
+ 731              	.LBB107:
+ 732              	.LBB105:
+ 733              		.loc 2 15 101 discriminator 2 view .LVU240
+ 734 0012 07EE902A 		vmov	s15, r2	@ int
+ 735 0016 F8EE677A 		vcvt.f32.u32	s15, s15
+ 736              	.LVL47:
+ 737              	.LBB100:
+ 738              	.LBI100:
+ 739              		.file 3 "../../DaisySP//Source/Utility/dsp.h"
+   1:../../DaisySP//Source/Utility/dsp.h **** /*
+   2:../../DaisySP//Source/Utility/dsp.h **** Copyright (c) 2020 Electrosmith, Corp, Emilie Gillet
+   3:../../DaisySP//Source/Utility/dsp.h **** 
+   4:../../DaisySP//Source/Utility/dsp.h **** Use of this source code is governed by an MIT-style
+   5:../../DaisySP//Source/Utility/dsp.h **** license that can be found in the LICENSE file or at
+   6:../../DaisySP//Source/Utility/dsp.h **** https://opensource.org/licenses/MIT.
+   7:../../DaisySP//Source/Utility/dsp.h **** */
+   8:../../DaisySP//Source/Utility/dsp.h **** 
+   9:../../DaisySP//Source/Utility/dsp.h **** /** Helpful defines, functions, and other utilities for use in/with daisysp modules.
+  10:../../DaisySP//Source/Utility/dsp.h **** */
+  11:../../DaisySP//Source/Utility/dsp.h **** #pragma once
+  12:../../DaisySP//Source/Utility/dsp.h **** #ifndef DSY_CORE_DSP
+  13:../../DaisySP//Source/Utility/dsp.h **** #define DSY_CORE_DSP
+  14:../../DaisySP//Source/Utility/dsp.h **** #include <cassert>
+  15:../../DaisySP//Source/Utility/dsp.h **** #include <cstdint>
+  16:../../DaisySP//Source/Utility/dsp.h **** #include <random>
+  17:../../DaisySP//Source/Utility/dsp.h **** #include <cmath>
+  18:../../DaisySP//Source/Utility/dsp.h **** 
+  19:../../DaisySP//Source/Utility/dsp.h **** /** PIs
+  20:../../DaisySP//Source/Utility/dsp.h **** */
+  21:../../DaisySP//Source/Utility/dsp.h **** #define PI_F 3.1415927410125732421875f
+  22:../../DaisySP//Source/Utility/dsp.h **** #define TWOPI_F (2.0f * PI_F)
+  23:../../DaisySP//Source/Utility/dsp.h **** #define HALFPI_F (PI_F * 0.5f)
+  24:../../DaisySP//Source/Utility/dsp.h **** #define DSY_MIN(in, mn) (in < mn ? in : mn)
+  25:../../DaisySP//Source/Utility/dsp.h **** #define DSY_MAX(in, mx) (in > mx ? in : mx)
+  26:../../DaisySP//Source/Utility/dsp.h **** #define DSY_CLAMP(in, mn, mx) (DSY_MIN(DSY_MAX(in, mn), mx))
+  27:../../DaisySP//Source/Utility/dsp.h **** #define DSY_COUNTOF(_arr) (sizeof(_arr) / sizeof(_arr[0]))
+  28:../../DaisySP//Source/Utility/dsp.h **** 
+  29:../../DaisySP//Source/Utility/dsp.h **** namespace daisysp
+  30:../../DaisySP//Source/Utility/dsp.h **** {
+  31:../../DaisySP//Source/Utility/dsp.h **** //Avoids division for random floats. e.g. rand() * kRandFrac
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 19
+
+
+  32:../../DaisySP//Source/Utility/dsp.h **** static constexpr float kRandFrac = 1.f / (float)RAND_MAX;
+  33:../../DaisySP//Source/Utility/dsp.h **** 
+  34:../../DaisySP//Source/Utility/dsp.h **** //Convert from semitones to other units. e.g. 2 ^ (kOneTwelfth * x)
+  35:../../DaisySP//Source/Utility/dsp.h **** static constexpr float kOneTwelfth = 1.f / 12.f;
+  36:../../DaisySP//Source/Utility/dsp.h **** 
+  37:../../DaisySP//Source/Utility/dsp.h **** /** efficient floating point min/max
+  38:../../DaisySP//Source/Utility/dsp.h **** c/o stephen mccaul
+  39:../../DaisySP//Source/Utility/dsp.h **** */
+  40:../../DaisySP//Source/Utility/dsp.h **** inline float fmax(float a, float b)
+  41:../../DaisySP//Source/Utility/dsp.h **** {
+  42:../../DaisySP//Source/Utility/dsp.h ****     float r;
+  43:../../DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+  44:../../DaisySP//Source/Utility/dsp.h ****     asm("vmaxnm.f32 %[d], %[n], %[m]" : [d] "=t"(r) : [n] "t"(a), [m] "t"(b) :);
+  45:../../DaisySP//Source/Utility/dsp.h **** #else
+  46:../../DaisySP//Source/Utility/dsp.h ****     r = (a > b) ? a : b;
+  47:../../DaisySP//Source/Utility/dsp.h **** #endif // __arm__
+  48:../../DaisySP//Source/Utility/dsp.h ****     return r;
+  49:../../DaisySP//Source/Utility/dsp.h **** }
+  50:../../DaisySP//Source/Utility/dsp.h **** 
+  51:../../DaisySP//Source/Utility/dsp.h **** inline float fmin(float a, float b)
+ 740              		.loc 3 51 14 is_stmt 1 discriminator 2 view .LVU241
+ 741              	.LBB101:
+  52:../../DaisySP//Source/Utility/dsp.h **** {
+  53:../../DaisySP//Source/Utility/dsp.h ****     float r;
+ 742              		.loc 3 53 5 discriminator 2 view .LVU242
+  54:../../DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+  55:../../DaisySP//Source/Utility/dsp.h ****     asm("vminnm.f32 %[d], %[n], %[m]" : [d] "=t"(r) : [n] "t"(a), [m] "t"(b) :);
+ 743              		.loc 3 55 5 discriminator 2 view .LVU243
+ 744              	.LBE101:
+ 745              	.LBE100:
+ 746              		.loc 2 15 94 is_stmt 0 discriminator 2 view .LVU244
+ 747 001a 20EE277A 		vmul.f32	s14, s0, s15
+ 748              	.LVL48:
+ 749              	.LBB103:
+ 750              	.LBB102:
+ 751              		.loc 3 55 5 discriminator 2 view .LVU245
+ 752              		.syntax unified
+ 753              	@ 55 "../../DaisySP//Source/Utility/dsp.h" 1
+ 754 001e C7FE677A 		vminnm.f32 s15, s14, s15
+ 755              	@ 0 "" 2
+ 756              	.LVL49:
+  56:../../DaisySP//Source/Utility/dsp.h **** #else
+  57:../../DaisySP//Source/Utility/dsp.h ****     r = (a < b) ? a : b;
+  58:../../DaisySP//Source/Utility/dsp.h **** #endif // __arm__
+  59:../../DaisySP//Source/Utility/dsp.h ****     return r;
+ 757              		.loc 3 59 5 is_stmt 1 discriminator 2 view .LVU246
+ 758              		.loc 3 59 5 is_stmt 0 discriminator 2 view .LVU247
+ 759              		.thumb
+ 760              		.syntax unified
+ 761              	.LBE102:
+ 762              	.LBE103:
+ 763              		.loc 2 15 59 discriminator 2 view .LVU248
+ 764 0022 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 765 0026 43ED0F7A 		vstr.32	s15, [r3, #-60]	@ int
+ 766              	.LVL50:
+ 767              		.loc 2 15 59 discriminator 2 view .LVU249
+ 768              	.LBE105:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 20
+
+
+ 769              	.LBE107:
+  86:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 770              		.loc 1 86 5 is_stmt 1 discriminator 2 view .LVU250
+  86:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 771              		.loc 1 86 20 discriminator 2 view .LVU251
+ 772 002a EDD1     		bne	.L33
+ 773              	.LBE97:
+  88:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight) 
+ 774              		.loc 1 88 5 view .LVU252
+ 775              	.LVL51:
+ 776              	.LBB108:
+ 777              		.loc 1 88 20 view .LVU253
+ 778 002c 00F57E70 		add	r0, r0, #1016
+ 779              	.LVL52:
+ 780              	.L34:
+  89:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 781              		.loc 1 89 9 discriminator 2 view .LVU254
+ 782              	.LBB109:
+ 783              	.LBI109:
+ 784              		.loc 2 15 14 discriminator 2 view .LVU255
+ 785              	.LBB110:
+ 786              		.loc 2 15 43 discriminator 2 view .LVU256
+ 787              		.loc 2 15 115 is_stmt 0 discriminator 2 view .LVU257
+ 788 0030 53E90412 		ldrd	r1, r2, [r3, #-16]
+ 789              	.LBE110:
+ 790              	.LBE109:
+  88:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight) 
+ 791              		.loc 1 88 20 discriminator 2 view .LVU258
+ 792 0034 2833     		adds	r3, r3, #40
+ 793              	.LVL53:
+ 794              	.LBB117:
+ 795              	.LBB115:
+ 796              		.loc 2 15 115 discriminator 2 view .LVU259
+ 797 0036 521A     		subs	r2, r2, r1
+ 798              	.LBE115:
+ 799              	.LBE117:
+  88:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight) 
+ 800              		.loc 1 88 20 discriminator 2 view .LVU260
+ 801 0038 9842     		cmp	r0, r3
+ 802              	.LBB118:
+ 803              	.LBB116:
+ 804              		.loc 2 15 101 discriminator 2 view .LVU261
+ 805 003a 07EE902A 		vmov	s15, r2	@ int
+ 806 003e F8EE677A 		vcvt.f32.u32	s15, s15
+ 807              	.LVL54:
+ 808              	.LBB111:
+ 809              	.LBI111:
+  51:../../DaisySP//Source/Utility/dsp.h **** {
+ 810              		.loc 3 51 14 is_stmt 1 discriminator 2 view .LVU262
+ 811              	.LBB112:
+  53:../../DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 812              		.loc 3 53 5 discriminator 2 view .LVU263
+  55:../../DaisySP//Source/Utility/dsp.h **** #else
+ 813              		.loc 3 55 5 discriminator 2 view .LVU264
+ 814              	.LBE112:
+ 815              	.LBE111:
+ 816              		.loc 2 15 94 is_stmt 0 discriminator 2 view .LVU265
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 21
+
+
+ 817 0042 20EE277A 		vmul.f32	s14, s0, s15
+ 818              	.LVL55:
+ 819              	.LBB114:
+ 820              	.LBB113:
+  55:../../DaisySP//Source/Utility/dsp.h **** #else
+ 821              		.loc 3 55 5 discriminator 2 view .LVU266
+ 822              		.syntax unified
+ 823              	@ 55 "../../DaisySP//Source/Utility/dsp.h" 1
+ 824 0046 C7FE677A 		vminnm.f32 s15, s14, s15
+ 825              	@ 0 "" 2
+ 826              	.LVL56:
+ 827              		.loc 3 59 5 is_stmt 1 discriminator 2 view .LVU267
+ 828              		.loc 3 59 5 is_stmt 0 discriminator 2 view .LVU268
+ 829              		.thumb
+ 830              		.syntax unified
+ 831              	.LBE113:
+ 832              	.LBE114:
+ 833              		.loc 2 15 59 discriminator 2 view .LVU269
+ 834 004a FCEEE77A 		vcvt.u32.f32	s15, s15
+ 835 004e 43ED0F7A 		vstr.32	s15, [r3, #-60]	@ int
+ 836              	.LVL57:
+ 837              		.loc 2 15 59 discriminator 2 view .LVU270
+ 838              	.LBE116:
+ 839              	.LBE118:
+  88:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 840              		.loc 1 88 5 is_stmt 1 discriminator 2 view .LVU271
+  88:../virveldsp/src/granulator.cpp ****         g.setOffset(offset);
+ 841              		.loc 1 88 20 discriminator 2 view .LVU272
+ 842 0052 EDD1     		bne	.L34
+ 843              	.LBE108:
+  90:../virveldsp/src/granulator.cpp **** }
+ 844              		.loc 1 90 1 is_stmt 0 view .LVU273
+ 845 0054 7047     		bx	lr
+ 846              		.cfi_endproc
+ 847              	.LFE4743:
+ 849 0056 00BF     		.section	.text._ZN3dsp10Granulator13setNumSamplesEm,"ax",%progbits
+ 850              		.align	1
+ 851              		.p2align 2,,3
+ 852              		.global	_ZN3dsp10Granulator13setNumSamplesEm
+ 853              		.syntax unified
+ 854              		.thumb
+ 855              		.thumb_func
+ 857              	_ZN3dsp10Granulator13setNumSamplesEm:
+ 858              	.LVL58:
+ 859              	.LFB4744:
+  91:../virveldsp/src/granulator.cpp **** 
+  92:../virveldsp/src/granulator.cpp **** void dsp::Granulator::setNumSamples(const uint32_t size) {
+ 860              		.loc 1 92 58 is_stmt 1 view -0
+ 861              		.cfi_startproc
+ 862              		@ args = 0, pretend = 0, frame = 0
+ 863              		@ frame_needed = 0, uses_anonymous_args = 0
+ 864              		@ link register save eliminated.
+  93:../virveldsp/src/granulator.cpp ****     m_numSamples = size;
+ 865              		.loc 1 93 5 view .LVU275
+ 866 0000 00F13803 		add	r3, r0, #56
+ 867 0004 00F50672 		add	r2, r0, #536
+ 868              		.loc 1 93 18 is_stmt 0 view .LVU276
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 22
+
+
+ 869 0008 8160     		str	r1, [r0, #8]
+  94:../virveldsp/src/granulator.cpp ****     for(auto &g:m_grainsLeft)
+ 870              		.loc 1 94 5 is_stmt 1 view .LVU277
+ 871              	.LVL59:
+ 872              	.LBB119:
+ 873              		.loc 1 94 17 view .LVU278
+ 874              	.L38:
+  95:../virveldsp/src/granulator.cpp ****         g.setSize(size);
+ 875              		.loc 1 95 9 discriminator 2 view .LVU279
+ 876              	.LBB120:
+ 877              	.LBI120:
+  16:../virveldsp/src/granulator.h ****         void setJitter(const float jitter) { m_jitter = static_cast<uint32_t>(jitter * static_cast<
+  17:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+  18:../virveldsp/src/granulator.h ****         void setDuration(const float s);
+  19:../virveldsp/src/granulator.h ****         void setSize(const uint32_t size) { m_size = size;}
+ 878              		.loc 2 19 14 discriminator 2 view .LVU280
+ 879              	.LBB121:
+ 880              		.loc 2 19 45 discriminator 2 view .LVU281
+ 881              		.loc 2 19 52 is_stmt 0 discriminator 2 view .LVU282
+ 882 000a 43F80C1C 		str	r1, [r3, #-12]
+ 883              	.LVL60:
+ 884              		.loc 2 19 52 discriminator 2 view .LVU283
+ 885              	.LBE121:
+ 886              	.LBE120:
+  94:../virveldsp/src/granulator.cpp ****         g.setSize(size);
+ 887              		.loc 1 94 5 is_stmt 1 discriminator 2 view .LVU284
+  94:../virveldsp/src/granulator.cpp ****         g.setSize(size);
+ 888              		.loc 1 94 17 discriminator 2 view .LVU285
+ 889 000e 2833     		adds	r3, r3, #40
+ 890              	.LVL61:
+  94:../virveldsp/src/granulator.cpp ****         g.setSize(size);
+ 891              		.loc 1 94 17 is_stmt 0 discriminator 2 view .LVU286
+ 892 0010 9342     		cmp	r3, r2
+ 893 0012 FAD1     		bne	.L38
+  94:../virveldsp/src/granulator.cpp ****         g.setSize(size);
+ 894              		.loc 1 94 17 discriminator 2 view .LVU287
+ 895              	.LBE119:
+  96:../virveldsp/src/granulator.cpp ****     for(auto &g:m_grainsRight)
+ 896              		.loc 1 96 5 is_stmt 1 view .LVU288
+ 897              	.LVL62:
+ 898              	.LBB122:
+ 899              		.loc 1 96 17 view .LVU289
+ 900 0014 00F57E70 		add	r0, r0, #1016
+ 901              	.LVL63:
+ 902              	.L39:
+  97:../virveldsp/src/granulator.cpp ****         g.setSize(size);
+ 903              		.loc 1 97 9 discriminator 2 view .LVU290
+ 904              	.LBB123:
+ 905              	.LBI123:
+ 906              		.loc 2 19 14 discriminator 2 view .LVU291
+ 907              	.LBB124:
+ 908              		.loc 2 19 45 discriminator 2 view .LVU292
+ 909              		.loc 2 19 52 is_stmt 0 discriminator 2 view .LVU293
+ 910 0018 43F80C1C 		str	r1, [r3, #-12]
+ 911              	.LVL64:
+ 912              		.loc 2 19 52 discriminator 2 view .LVU294
+ 913              	.LBE124:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 23
+
+
+ 914              	.LBE123:
+  96:../virveldsp/src/granulator.cpp ****     for(auto &g:m_grainsRight)
+ 915              		.loc 1 96 5 is_stmt 1 discriminator 2 view .LVU295
+  96:../virveldsp/src/granulator.cpp ****     for(auto &g:m_grainsRight)
+ 916              		.loc 1 96 17 discriminator 2 view .LVU296
+ 917 001c 2833     		adds	r3, r3, #40
+ 918              	.LVL65:
+  96:../virveldsp/src/granulator.cpp ****     for(auto &g:m_grainsRight)
+ 919              		.loc 1 96 17 is_stmt 0 discriminator 2 view .LVU297
+ 920 001e 8342     		cmp	r3, r0
+ 921 0020 FAD1     		bne	.L39
+  96:../virveldsp/src/granulator.cpp ****     for(auto &g:m_grainsRight)
+ 922              		.loc 1 96 17 discriminator 2 view .LVU298
+ 923              	.LBE122:
+  98:../virveldsp/src/granulator.cpp **** }
+ 924              		.loc 1 98 1 view .LVU299
+ 925 0022 7047     		bx	lr
+ 926              		.cfi_endproc
+ 927              	.LFE4744:
+ 929              		.section	.text._ZN3dsp10Granulator11setDurationEf,"ax",%progbits
+ 930              		.align	1
+ 931              		.p2align 2,,3
+ 932              		.global	_ZN3dsp10Granulator11setDurationEf
+ 933              		.syntax unified
+ 934              		.thumb
+ 935              		.thumb_func
+ 937              	_ZN3dsp10Granulator11setDurationEf:
+ 938              	.LVL66:
+ 939              	.LFB4745:
+  99:../virveldsp/src/granulator.cpp **** 
+ 100:../virveldsp/src/granulator.cpp **** void dsp::Granulator::setDuration(const float s) {
+ 940              		.loc 1 100 50 is_stmt 1 view -0
+ 941              		.cfi_startproc
+ 942              		@ args = 0, pretend = 0, frame = 0
+ 943              		@ frame_needed = 0, uses_anonymous_args = 0
+ 944              		@ link register save eliminated.
+ 101:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft) 
+ 945              		.loc 1 101 5 view .LVU301
+ 946              	.LBB125:
+ 947              		.loc 1 101 20 view .LVU302
+ 948 0000 00F13803 		add	r3, r0, #56
+ 949 0004 00F50671 		add	r1, r0, #536
+ 950              	.LVL67:
+ 951              	.L43:
+ 102:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 952              		.loc 1 102 9 discriminator 2 view .LVU303
+ 953              	.LBB126:
+ 954              	.LBI126:
+  69:../virveldsp/src/granulator.cpp ****     {
+ 955              		.loc 1 69 6 discriminator 2 view .LVU304
+ 956              	.LBB127:
+  70:../virveldsp/src/granulator.cpp ****         m_duration = std::max(static_cast<uint32_t>(10), static_cast<uint32_t>(s * static_cast<floa
+ 957              		.loc 1 70 5 discriminator 2 view .LVU305
+  71:../virveldsp/src/granulator.cpp ****     }
+ 958              		.loc 1 71 9 discriminator 2 view .LVU306
+  71:../virveldsp/src/granulator.cpp ****     }
+ 959              		.loc 1 71 84 is_stmt 0 discriminator 2 view .LVU307
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 24
+
+
+ 960 0008 53ED037A 		vldr.32	s15, [r3, #-12]	@ int
+ 961              	.LBE127:
+ 962              	.LBE126:
+ 101:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 963              		.loc 1 101 20 discriminator 2 view .LVU308
+ 964 000c 2833     		adds	r3, r3, #40
+ 965              	.LVL68:
+ 966              	.LBB130:
+ 967              	.LBB128:
+  71:../virveldsp/src/granulator.cpp ****     }
+ 968              		.loc 1 71 84 discriminator 2 view .LVU309
+ 969 000e F8EE677A 		vcvt.f32.u32	s15, s15
+  71:../virveldsp/src/granulator.cpp ****     }
+ 970              		.loc 1 71 82 discriminator 2 view .LVU310
+ 971 0012 67EE807A 		vmul.f32	s15, s15, s0
+  71:../virveldsp/src/granulator.cpp ****     }
+ 972              		.loc 1 71 58 discriminator 2 view .LVU311
+ 973 0016 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 974 001a 17EE902A 		vmov	r2, s15	@ int
+  71:../virveldsp/src/granulator.cpp ****     }
+ 975              		.loc 1 71 20 discriminator 2 view .LVU312
+ 976 001e 0A2A     		cmp	r2, #10
+ 977 0020 38BF     		it	cc
+ 978 0022 0A22     		movcc	r2, #10
+ 979              	.LBE128:
+ 980              	.LBE130:
+ 101:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 981              		.loc 1 101 20 discriminator 2 view .LVU313
+ 982 0024 8B42     		cmp	r3, r1
+ 983              	.LBB131:
+ 984              	.LBB129:
+  71:../virveldsp/src/granulator.cpp ****     }
+ 985              		.loc 1 71 20 discriminator 2 view .LVU314
+ 986 0026 43F8382C 		str	r2, [r3, #-56]
+ 987              	.LVL69:
+  71:../virveldsp/src/granulator.cpp ****     }
+ 988              		.loc 1 71 20 discriminator 2 view .LVU315
+ 989              	.LBE129:
+ 990              	.LBE131:
+ 101:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 991              		.loc 1 101 5 is_stmt 1 discriminator 2 view .LVU316
+ 101:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 992              		.loc 1 101 20 discriminator 2 view .LVU317
+ 993 002a EDD1     		bne	.L43
+ 994              	.LBE125:
+ 103:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight) 
+ 995              		.loc 1 103 5 view .LVU318
+ 996              	.LVL70:
+ 997              	.LBB132:
+ 998              		.loc 1 103 20 view .LVU319
+ 999 002c 00F57E70 		add	r0, r0, #1016
+ 1000              	.LVL71:
+ 1001              	.L44:
+ 104:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 1002              		.loc 1 104 9 discriminator 2 view .LVU320
+ 1003              	.LBB133:
+ 1004              	.LBI133:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 25
+
+
+  69:../virveldsp/src/granulator.cpp ****     {
+ 1005              		.loc 1 69 6 discriminator 2 view .LVU321
+ 1006              	.LBB134:
+  70:../virveldsp/src/granulator.cpp ****         m_duration = std::max(static_cast<uint32_t>(10), static_cast<uint32_t>(s * static_cast<floa
+ 1007              		.loc 1 70 5 discriminator 2 view .LVU322
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1008              		.loc 1 71 9 discriminator 2 view .LVU323
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1009              		.loc 1 71 84 is_stmt 0 discriminator 2 view .LVU324
+ 1010 0030 53ED037A 		vldr.32	s15, [r3, #-12]	@ int
+ 1011              	.LBE134:
+ 1012              	.LBE133:
+ 103:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 1013              		.loc 1 103 20 discriminator 2 view .LVU325
+ 1014 0034 2833     		adds	r3, r3, #40
+ 1015              	.LVL72:
+ 1016              	.LBB137:
+ 1017              	.LBB135:
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1018              		.loc 1 71 84 discriminator 2 view .LVU326
+ 1019 0036 F8EE677A 		vcvt.f32.u32	s15, s15
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1020              		.loc 1 71 82 discriminator 2 view .LVU327
+ 1021 003a 67EE807A 		vmul.f32	s15, s15, s0
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1022              		.loc 1 71 58 discriminator 2 view .LVU328
+ 1023 003e FCEEE77A 		vcvt.u32.f32	s15, s15
+ 1024 0042 17EE902A 		vmov	r2, s15	@ int
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1025              		.loc 1 71 20 discriminator 2 view .LVU329
+ 1026 0046 0A2A     		cmp	r2, #10
+ 1027 0048 38BF     		it	cc
+ 1028 004a 0A22     		movcc	r2, #10
+ 1029              	.LBE135:
+ 1030              	.LBE137:
+ 103:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 1031              		.loc 1 103 20 discriminator 2 view .LVU330
+ 1032 004c 9842     		cmp	r0, r3
+ 1033              	.LBB138:
+ 1034              	.LBB136:
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1035              		.loc 1 71 20 discriminator 2 view .LVU331
+ 1036 004e 43F8382C 		str	r2, [r3, #-56]
+ 1037              	.LVL73:
+  71:../virveldsp/src/granulator.cpp ****     }
+ 1038              		.loc 1 71 20 discriminator 2 view .LVU332
+ 1039              	.LBE136:
+ 1040              	.LBE138:
+ 103:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 1041              		.loc 1 103 5 is_stmt 1 discriminator 2 view .LVU333
+ 103:../virveldsp/src/granulator.cpp ****         g.setDuration(s);
+ 1042              		.loc 1 103 20 discriminator 2 view .LVU334
+ 1043 0052 EDD1     		bne	.L44
+ 1044              	.LBE132:
+ 105:../virveldsp/src/granulator.cpp **** }
+ 1045              		.loc 1 105 1 is_stmt 0 view .LVU335
+ 1046 0054 7047     		bx	lr
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 26
+
+
+ 1047              		.cfi_endproc
+ 1048              	.LFE4745:
+ 1050 0056 00BF     		.section	.text._ZN3dsp10Granulator7setRateEf,"ax",%progbits
+ 1051              		.align	1
+ 1052              		.p2align 2,,3
+ 1053              		.global	_ZN3dsp10Granulator7setRateEf
+ 1054              		.syntax unified
+ 1055              		.thumb
+ 1056              		.thumb_func
+ 1058              	_ZN3dsp10Granulator7setRateEf:
+ 1059              	.LVL74:
+ 1060              	.LFB4746:
+ 106:../virveldsp/src/granulator.cpp **** 
+ 107:../virveldsp/src/granulator.cpp **** void dsp::Granulator::setRate(const float speed) {
+ 1061              		.loc 1 107 50 is_stmt 1 view -0
+ 1062              		.cfi_startproc
+ 1063              		@ args = 0, pretend = 0, frame = 0
+ 1064              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1065              		@ link register save eliminated.
+ 108:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsLeft)
+ 1066              		.loc 1 108 5 view .LVU337
+ 1067              	.LBB139:
+ 1068              		.loc 1 108 19 view .LVU338
+ 1069 0000 00F13803 		add	r3, r0, #56
+ 1070 0004 00F50672 		add	r2, r0, #536
+ 1071              	.LVL75:
+ 1072              	.L48:
+ 109:../virveldsp/src/granulator.cpp ****         g.setRate(speed);
+ 1073              		.loc 1 109 9 discriminator 2 view .LVU339
+ 1074              	.LBB140:
+ 1075              	.LBI140:
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1076              		.loc 2 14 14 discriminator 2 view .LVU340
+ 1077              	.LBB141:
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1078              		.loc 2 14 42 discriminator 2 view .LVU341
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1079              		.loc 2 14 49 is_stmt 0 discriminator 2 view .LVU342
+ 1080 0008 03ED070A 		vstr.32	s0, [r3, #-28]
+ 1081              	.LVL76:
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1082              		.loc 2 14 49 discriminator 2 view .LVU343
+ 1083              	.LBE141:
+ 1084              	.LBE140:
+ 108:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsLeft)
+ 1085              		.loc 1 108 5 is_stmt 1 discriminator 2 view .LVU344
+ 108:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsLeft)
+ 1086              		.loc 1 108 19 discriminator 2 view .LVU345
+ 1087 000c 2833     		adds	r3, r3, #40
+ 1088              	.LVL77:
+ 108:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsLeft)
+ 1089              		.loc 1 108 19 is_stmt 0 discriminator 2 view .LVU346
+ 1090 000e 9342     		cmp	r3, r2
+ 1091 0010 FAD1     		bne	.L48
+ 108:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsLeft)
+ 1092              		.loc 1 108 19 discriminator 2 view .LVU347
+ 1093              	.LBE139:
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 27
+
+
+ 110:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsRight)
+ 1094              		.loc 1 110 5 is_stmt 1 view .LVU348
+ 1095              	.LVL78:
+ 1096              	.LBB142:
+ 1097              		.loc 1 110 19 view .LVU349
+ 1098 0012 00F57E70 		add	r0, r0, #1016
+ 1099              	.LVL79:
+ 1100              	.L49:
+ 111:../virveldsp/src/granulator.cpp ****         g.setRate(speed);
+ 1101              		.loc 1 111 9 discriminator 2 view .LVU350
+ 1102              	.LBB143:
+ 1103              	.LBI143:
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1104              		.loc 2 14 14 discriminator 2 view .LVU351
+ 1105              	.LBB144:
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1106              		.loc 2 14 42 discriminator 2 view .LVU352
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1107              		.loc 2 14 49 is_stmt 0 discriminator 2 view .LVU353
+ 1108 0016 03ED070A 		vstr.32	s0, [r3, #-28]
+ 1109              	.LVL80:
+  14:../virveldsp/src/granulator.h ****         void setOffset(const float pos) { m_next_offset = static_cast<uint32_t>(daisysp::fmin(pos *
+ 1110              		.loc 2 14 49 discriminator 2 view .LVU354
+ 1111              	.LBE144:
+ 1112              	.LBE143:
+ 110:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsRight)
+ 1113              		.loc 1 110 5 is_stmt 1 discriminator 2 view .LVU355
+ 110:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsRight)
+ 1114              		.loc 1 110 19 discriminator 2 view .LVU356
+ 1115 001a 2833     		adds	r3, r3, #40
+ 1116              	.LVL81:
+ 110:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsRight)
+ 1117              		.loc 1 110 19 is_stmt 0 discriminator 2 view .LVU357
+ 1118 001c 8342     		cmp	r3, r0
+ 1119 001e FAD1     		bne	.L49
+ 110:../virveldsp/src/granulator.cpp ****     for(auto &g : m_grainsRight)
+ 1120              		.loc 1 110 19 discriminator 2 view .LVU358
+ 1121              	.LBE142:
+ 112:../virveldsp/src/granulator.cpp **** }
+ 1122              		.loc 1 112 1 view .LVU359
+ 1123 0020 7047     		bx	lr
+ 1124              		.cfi_endproc
+ 1125              	.LFE4746:
+ 1127 0022 00BF     		.section	.text._ZN3dsp10Granulator9setJitterEf,"ax",%progbits
+ 1128              		.align	1
+ 1129              		.p2align 2,,3
+ 1130              		.global	_ZN3dsp10Granulator9setJitterEf
+ 1131              		.syntax unified
+ 1132              		.thumb
+ 1133              		.thumb_func
+ 1135              	_ZN3dsp10Granulator9setJitterEf:
+ 1136              	.LVL82:
+ 1137              	.LFB4747:
+ 113:../virveldsp/src/granulator.cpp **** 
+ 114:../virveldsp/src/granulator.cpp **** void dsp::Granulator::setJitter(const float jitter) {
+ 1138              		.loc 1 114 53 is_stmt 1 view -0
+ 1139              		.cfi_startproc
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 28
+
+
+ 1140              		@ args = 0, pretend = 0, frame = 0
+ 1141              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1142              		@ link register save eliminated.
+ 115:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft)
+ 1143              		.loc 1 115 5 view .LVU361
+ 1144              	.LBB145:
+ 1145              		.loc 1 115 20 view .LVU362
+ 1146 0000 00F13803 		add	r3, r0, #56
+ 1147 0004 00F50672 		add	r2, r0, #536
+ 1148              	.LVL83:
+ 1149              	.L53:
+ 116:../virveldsp/src/granulator.cpp ****         g.setJitter(jitter);
+ 1150              		.loc 1 116 9 discriminator 2 view .LVU363
+ 1151              	.LBB146:
+ 1152              	.LBI146:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1153              		.loc 2 16 14 discriminator 2 view .LVU364
+ 1154              	.LBB147:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1155              		.loc 2 16 46 discriminator 2 view .LVU365
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1156              		.loc 2 16 88 is_stmt 0 discriminator 2 view .LVU366
+ 1157 0008 53ED037A 		vldr.32	s15, [r3, #-12]	@ int
+ 1158              	.LBE147:
+ 1159              	.LBE146:
+ 115:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft)
+ 1160              		.loc 1 115 20 discriminator 2 view .LVU367
+ 1161 000c 2833     		adds	r3, r3, #40
+ 1162              	.LVL84:
+ 1163              	.LBB150:
+ 1164              	.LBB148:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1165              		.loc 2 16 88 discriminator 2 view .LVU368
+ 1166 000e F8EE677A 		vcvt.f32.u32	s15, s15
+ 1167              	.LBE148:
+ 1168              	.LBE150:
+ 115:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft)
+ 1169              		.loc 1 115 20 discriminator 2 view .LVU369
+ 1170 0012 9342     		cmp	r3, r2
+ 1171              	.LBB151:
+ 1172              	.LBB149:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1173              		.loc 2 16 86 discriminator 2 view .LVU370
+ 1174 0014 67EE807A 		vmul.f32	s15, s15, s0
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1175              		.loc 2 16 57 discriminator 2 view .LVU371
+ 1176 0018 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 1177 001c 43ED0C7A 		vstr.32	s15, [r3, #-48]	@ int
+ 1178              	.LVL85:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1179              		.loc 2 16 57 discriminator 2 view .LVU372
+ 1180              	.LBE149:
+ 1181              	.LBE151:
+ 115:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft)
+ 1182              		.loc 1 115 5 is_stmt 1 discriminator 2 view .LVU373
+ 115:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsLeft)
+ 1183              		.loc 1 115 20 discriminator 2 view .LVU374
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 29
+
+
+ 1184 0020 F2D1     		bne	.L53
+ 1185              	.LBE145:
+ 117:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight)
+ 1186              		.loc 1 117 5 view .LVU375
+ 1187              	.LVL86:
+ 1188              	.LBB152:
+ 1189              		.loc 1 117 20 view .LVU376
+ 1190 0022 00F57E70 		add	r0, r0, #1016
+ 1191              	.LVL87:
+ 1192              	.L54:
+ 118:../virveldsp/src/granulator.cpp ****         g.setJitter(jitter);
+ 1193              		.loc 1 118 9 discriminator 2 view .LVU377
+ 1194              	.LBB153:
+ 1195              	.LBI153:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1196              		.loc 2 16 14 discriminator 2 view .LVU378
+ 1197              	.LBB154:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1198              		.loc 2 16 46 discriminator 2 view .LVU379
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1199              		.loc 2 16 88 is_stmt 0 discriminator 2 view .LVU380
+ 1200 0026 53ED037A 		vldr.32	s15, [r3, #-12]	@ int
+ 1201              	.LBE154:
+ 1202              	.LBE153:
+ 117:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight)
+ 1203              		.loc 1 117 20 discriminator 2 view .LVU381
+ 1204 002a 2833     		adds	r3, r3, #40
+ 1205              	.LVL88:
+ 1206              	.LBB157:
+ 1207              	.LBB155:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1208              		.loc 2 16 88 discriminator 2 view .LVU382
+ 1209 002c F8EE677A 		vcvt.f32.u32	s15, s15
+ 1210              	.LBE155:
+ 1211              	.LBE157:
+ 117:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight)
+ 1212              		.loc 1 117 20 discriminator 2 view .LVU383
+ 1213 0030 9842     		cmp	r0, r3
+ 1214              	.LBB158:
+ 1215              	.LBB156:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1216              		.loc 2 16 86 discriminator 2 view .LVU384
+ 1217 0032 67EE807A 		vmul.f32	s15, s15, s0
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1218              		.loc 2 16 57 discriminator 2 view .LVU385
+ 1219 0036 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 1220 003a 43ED0C7A 		vstr.32	s15, [r3, #-48]	@ int
+ 1221              	.LVL89:
+  16:../virveldsp/src/granulator.h ****         void setDelay(const uint32_t delayInSamples) {m_delay = delayInSamples;}
+ 1222              		.loc 2 16 57 discriminator 2 view .LVU386
+ 1223              	.LBE156:
+ 1224              	.LBE158:
+ 117:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight)
+ 1225              		.loc 1 117 5 is_stmt 1 discriminator 2 view .LVU387
+ 117:../virveldsp/src/granulator.cpp ****     for (auto &g : m_grainsRight)
+ 1226              		.loc 1 117 20 discriminator 2 view .LVU388
+ 1227 003e F2D1     		bne	.L54
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 30
+
+
+ 1228              	.LBE152:
+ 119:../virveldsp/src/granulator.cpp **** }
+ 1229              		.loc 1 119 1 is_stmt 0 view .LVU389
+ 1230 0040 7047     		bx	lr
+ 1231              		.cfi_endproc
+ 1232              	.LFE4747:
+ 1234 0042 00BF     		.section	.text._ZN3dsp10Granulator4playEPfS1_,"ax",%progbits
+ 1235              		.align	1
+ 1236              		.p2align 2,,3
+ 1237              		.global	_ZN3dsp10Granulator4playEPfS1_
+ 1238              		.syntax unified
+ 1239              		.thumb
+ 1240              		.thumb_func
+ 1242              	_ZN3dsp10Granulator4playEPfS1_:
+ 1243              	.LVL90:
+ 1244              	.LFB4748:
+ 120:../virveldsp/src/granulator.cpp **** 
+ 121:../virveldsp/src/granulator.cpp **** void dsp::Granulator::play(float * outL, float * outR) {
+ 1245              		.loc 1 121 56 is_stmt 1 view -0
+ 1246              		.cfi_startproc
+ 1247              		@ args = 0, pretend = 0, frame = 0
+ 1248              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122:../virveldsp/src/granulator.cpp **** 
+ 123:../virveldsp/src/granulator.cpp ****     for (auto &g: m_grainsLeft) {
+ 1249              		.loc 1 123 5 view .LVU391
+ 121:../virveldsp/src/granulator.cpp **** 
+ 1250              		.loc 1 121 56 is_stmt 0 view .LVU392
+ 1251 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1252              		.cfi_def_cfa_offset 24
+ 1253              		.cfi_offset 4, -24
+ 1254              		.cfi_offset 5, -20
+ 1255              		.cfi_offset 6, -16
+ 1256              		.cfi_offset 7, -12
+ 1257              		.cfi_offset 8, -8
+ 1258              		.cfi_offset 14, -4
+ 121:../virveldsp/src/granulator.cpp **** 
+ 1259              		.loc 1 121 56 view .LVU393
+ 1260 0004 0746     		mov	r7, r0
+ 1261              	.LVL91:
+ 1262              	.LBB159:
+ 1263              		.loc 1 123 19 is_stmt 1 view .LVU394
+ 1264              	.LBE159:
+ 121:../virveldsp/src/granulator.cpp **** 
+ 1265              		.loc 1 121 56 is_stmt 0 view .LVU395
+ 1266 0006 0E46     		mov	r6, r1
+ 1267 0008 1546     		mov	r5, r2
+ 1268 000a 00F11004 		add	r4, r0, #16
+ 1269              	.LVL92:
+ 121:../virveldsp/src/granulator.cpp **** 
+ 1270              		.loc 1 121 56 view .LVU396
+ 1271 000e 00F5F878 		add	r8, r0, #496
+ 1272              	.LVL93:
+ 1273              	.L58:
+ 1274              	.LBB160:
+ 124:../virveldsp/src/granulator.cpp ****         *outL += g.play();
+ 1275              		.loc 1 124 9 is_stmt 1 discriminator 2 view .LVU397
+ 1276              		.loc 1 124 24 is_stmt 0 discriminator 2 view .LVU398
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 31
+
+
+ 1277 0012 2046     		mov	r0, r4
+ 123:../virveldsp/src/granulator.cpp ****         *outL += g.play();
+ 1278              		.loc 1 123 19 discriminator 2 view .LVU399
+ 1279 0014 2834     		adds	r4, r4, #40
+ 1280              	.LVL94:
+ 1281              		.loc 1 124 24 discriminator 2 view .LVU400
+ 1282 0016 FFF7FEFF 		bl	_ZN3dsp5Grain4playEv
+ 1283              	.LVL95:
+ 1284              		.loc 1 124 15 discriminator 2 view .LVU401
+ 1285 001a D6ED007A 		vldr.32	s15, [r6]
+ 123:../virveldsp/src/granulator.cpp ****         *outL += g.play();
+ 1286              		.loc 1 123 19 discriminator 2 view .LVU402
+ 1287 001e 4445     		cmp	r4, r8
+ 1288              		.loc 1 124 15 discriminator 2 view .LVU403
+ 1289 0020 37EE800A 		vadd.f32	s0, s15, s0
+ 1290 0024 86ED000A 		vstr.32	s0, [r6]
+ 123:../virveldsp/src/granulator.cpp ****         *outL += g.play();
+ 1291              		.loc 1 123 5 is_stmt 1 discriminator 2 view .LVU404
+ 1292              	.LVL96:
+ 123:../virveldsp/src/granulator.cpp ****         *outL += g.play();
+ 1293              		.loc 1 123 19 discriminator 2 view .LVU405
+ 1294 0028 F3D1     		bne	.L58
+ 1295              	.LBE160:
+ 125:../virveldsp/src/granulator.cpp ****     }
+ 126:../virveldsp/src/granulator.cpp ****     for (auto &g: m_grainsRight) {
+ 1296              		.loc 1 126 5 view .LVU406
+ 1297              	.LVL97:
+ 1298              	.LBB161:
+ 1299              		.loc 1 126 19 view .LVU407
+ 1300 002a 07F57477 		add	r7, r7, #976
+ 1301              	.LVL98:
+ 1302              	.L59:
+ 127:../virveldsp/src/granulator.cpp ****         *outR += g.play();
+ 1303              		.loc 1 127 9 discriminator 2 view .LVU408
+ 1304              		.loc 1 127 24 is_stmt 0 discriminator 2 view .LVU409
+ 1305 002e 2046     		mov	r0, r4
+ 126:../virveldsp/src/granulator.cpp ****         *outR += g.play();
+ 1306              		.loc 1 126 19 discriminator 2 view .LVU410
+ 1307 0030 2834     		adds	r4, r4, #40
+ 1308              	.LVL99:
+ 1309              		.loc 1 127 24 discriminator 2 view .LVU411
+ 1310 0032 FFF7FEFF 		bl	_ZN3dsp5Grain4playEv
+ 1311              	.LVL100:
+ 1312              		.loc 1 127 15 discriminator 2 view .LVU412
+ 1313 0036 D5ED007A 		vldr.32	s15, [r5]
+ 126:../virveldsp/src/granulator.cpp ****         *outR += g.play();
+ 1314              		.loc 1 126 19 discriminator 2 view .LVU413
+ 1315 003a A742     		cmp	r7, r4
+ 1316              		.loc 1 127 15 discriminator 2 view .LVU414
+ 1317 003c 37EE800A 		vadd.f32	s0, s15, s0
+ 1318 0040 85ED000A 		vstr.32	s0, [r5]
+ 126:../virveldsp/src/granulator.cpp ****         *outR += g.play();
+ 1319              		.loc 1 126 5 is_stmt 1 discriminator 2 view .LVU415
+ 1320              	.LVL101:
+ 126:../virveldsp/src/granulator.cpp ****         *outR += g.play();
+ 1321              		.loc 1 126 19 discriminator 2 view .LVU416
+ 1322 0044 F3D1     		bne	.L59
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 32
+
+
+ 1323              	.LBE161:
+ 128:../virveldsp/src/granulator.cpp ****     }
+ 129:../virveldsp/src/granulator.cpp **** }
+ 1324              		.loc 1 129 1 is_stmt 0 view .LVU417
+ 1325 0046 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1326              		.loc 1 129 1 view .LVU418
+ 1327              		.cfi_endproc
+ 1328              	.LFE4748:
+ 1330 004a 00BF     		.text
+ 1331              	.Letext0:
+ 1332              		.file 4 "/Applications/ARM/arm-none-eabi/include/machine/_default_types.h"
+ 1333              		.file 5 "/Applications/ARM/arm-none-eabi/include/sys/_stdint.h"
+ 1334              		.file 6 "/Applications/ARM/arm-none-eabi/include/stdint.h"
+ 1335              		.file 7 "/Applications/ARM/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 1336              		.file 8 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cmath"
+ 1337              		.file 9 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 1338              		.file 10 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 1339              		.file 11 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 1340              		.file 12 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 1341              		.file 13 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 1342              		.file 14 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+dp/hard/bit
+ 1343              		.file 15 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 1344              		.file 16 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 1345              		.file 17 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 1346              		.file 18 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 1347              		.file 19 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 1348              		.file 20 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cstring"
+ 1349              		.file 21 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/cwchar"
+ 1350              		.file 22 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/clocale"
+ 1351              		.file 23 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/basic_string.h"
+ 1352              		.file 24 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/stl_iterator.h"
+ 1353              		.file 25 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h"
+ 1354              		.file 26 "/Applications/ARM/arm-none-eabi/include/sys/_types.h"
+ 1355              		.file 27 "/Applications/ARM/arm-none-eabi/include/sys/reent.h"
+ 1356              		.file 28 "/Applications/ARM/arm-none-eabi/include/sys/lock.h"
+ 1357              		.file 29 "/Applications/ARM/arm-none-eabi/include/math.h"
+ 1358              		.file 30 "/Applications/ARM/arm-none-eabi/include/stdlib.h"
+ 1359              		.file 31 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/math.h"
+ 1360              		.file 32 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/bits/stl_algobase.h"
+ 1361              		.file 33 "/Applications/ARM/arm-none-eabi/include/c++/10.3.1/stdlib.h"
+ 1362              		.file 34 "../../libDaisy//src/daisy_core.h"
+ 1363              		.file 35 "../../libDaisy//src/util/wav_format.h"
+ 1364              		.file 36 "../../libDaisy//src/dev/max11300.h"
+ 1365              		.file 37 "/Applications/ARM/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ 1366              		.file 38 "/Applications/ARM/arm-none-eabi/include/stdio.h"
+ 1367              		.file 39 "/Applications/ARM/arm-none-eabi/include/string.h"
+ 1368              		.file 40 "../../DaisySP//Source/Control/adenv.h"
+ 1369              		.file 41 "/Applications/ARM/arm-none-eabi/include/wchar.h"
+ 1370              		.file 42 "/Applications/ARM/arm-none-eabi/include/locale.h"
+ 1371              		.file 43 "<built-in>"
+ 1372              		.file 44 "../../libDaisy//src/dev/sr_595.h"
+ARM GAS  /var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s 			page 33
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 granulator.cpp
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:19     .text._ZN3dsp5Grain4initEPfm:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:26     .text._ZN3dsp5Grain4initEPfm:0000000000000000 _ZN3dsp5Grain4initEPfm
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:68     .text._ZN3dsp5Grain4playEv:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:75     .text._ZN3dsp5Grain4playEv:0000000000000000 _ZN3dsp5Grain4playEv
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:501    .text._ZN3dsp5Grain4playEv:00000000000001b0 $d
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:508    .text._ZN3dsp5Grain11setDurationEf:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:515    .text._ZN3dsp5Grain11setDurationEf:0000000000000000 _ZN3dsp5Grain11setDurationEf
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:545    .text._ZN3dsp10Granulator4initEPfm:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:552    .text._ZN3dsp10Granulator4initEPfm:0000000000000000 _ZN3dsp10Granulator4initEPfm
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:687    .text._ZN3dsp10Granulator9setOffsetEf:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:694    .text._ZN3dsp10Granulator9setOffsetEf:0000000000000000 _ZN3dsp10Granulator9setOffsetEf
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:850    .text._ZN3dsp10Granulator13setNumSamplesEm:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:857    .text._ZN3dsp10Granulator13setNumSamplesEm:0000000000000000 _ZN3dsp10Granulator13setNumSamplesEm
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:930    .text._ZN3dsp10Granulator11setDurationEf:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:937    .text._ZN3dsp10Granulator11setDurationEf:0000000000000000 _ZN3dsp10Granulator11setDurationEf
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:1051   .text._ZN3dsp10Granulator7setRateEf:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:1058   .text._ZN3dsp10Granulator7setRateEf:0000000000000000 _ZN3dsp10Granulator7setRateEf
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:1128   .text._ZN3dsp10Granulator9setJitterEf:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:1135   .text._ZN3dsp10Granulator9setJitterEf:0000000000000000 _ZN3dsp10Granulator9setJitterEf
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:1235   .text._ZN3dsp10Granulator4playEPfS1_:0000000000000000 $t
+/var/folders/z2/7_lhr9dn53s9tj4s0rwtyswm0000gn/T//ccd69lsY.s:1242   .text._ZN3dsp10Granulator4playEPfS1_:0000000000000000 _ZN3dsp10Granulator4playEPfS1_
+
+UNDEFINED SYMBOLS
+sinf
+rand
